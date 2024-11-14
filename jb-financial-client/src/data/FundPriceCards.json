@@ -1,0 +1,27 @@
+[
+    {
+      "type": "fundPrice",
+      "title": "JB Vantage",
+      "subtitle": "Value Equity Fund",
+      "link": "/learn-more",
+      "buyPrice": 120.0,
+      "sellPrice": 122.0
+    },
+    {
+      "type": "fundPrice",
+      "title": "JB Vantage",
+      "subtitle": "Money Market",
+      "link": "/learn-more",
+      "buyPrice": 121.0,
+      "sellPrice": 123.0
+    },
+    {
+      "type": "fundPrice",
+      "title": "JB Vantage",
+      "subtitle": "Short Term Gilt Fund",
+      "link": "/learn-more",
+      "buyPrice": 118.0,
+      "sellPrice": 120.0
+    }
+  ]
+  

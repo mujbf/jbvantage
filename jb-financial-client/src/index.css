@@ -1,0 +1,557 @@
+
+/* Tailwind Imports */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden !important;
+}
+
+@font-face {
+  font-family: 'Switzer-Thin';
+  src: url('assets/fonts/Switzer-Thin.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Thin.woff') format('woff'),
+       url('assets/fonts/Switzer-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-ThinItalic';
+  src: url('assets/fonts/Switzer-ThinItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-ThinItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Extralight';
+  src: url('assets/fonts/Switzer-Extralight.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Extralight.woff') format('woff'),
+       url('assets/fonts/Switzer-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-ExtralightItalic';
+  src: url('assets/fonts/Switzer-ExtralightItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-ExtralightItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-ExtralightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Light';
+  src: url('assets/fonts/Switzer-Light.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Light.woff') format('woff'),
+       url('assets/fonts/Switzer-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-LightItalic';
+  src: url('assets/fonts/Switzer-LightItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-LightItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Regular';
+  src: url('assets/fonts/Switzer-Regular.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Regular.woff') format('woff'),
+       url('assets/fonts/Switzer-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-Italic';
+  src: url('assets/fonts/Switzer-Italic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Italic.woff') format('woff'),
+       url('assets/fonts/Switzer-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Medium';
+  src: url('assets/fonts/Switzer-Medium.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Medium.woff') format('woff'),
+       url('assets/fonts/Switzer-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-MediumItalic';
+  src: url('assets/fonts/Switzer-MediumItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-MediumItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Semibold';
+  src: url('assets/fonts/Switzer-Semibold.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Semibold.woff') format('woff'),
+       url('assets/fonts/Switzer-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-SemiboldItalic';
+  src: url('assets/fonts/Switzer-SemiboldItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-SemiboldItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Bold';
+  src: url('assets/fonts/Switzer-Bold.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Bold.woff') format('woff'),
+       url('assets/fonts/Switzer-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-BoldItalic';
+  src: url('assets/fonts/Switzer-BoldItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-BoldItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Extrabold';
+  src: url('assets/fonts/Switzer-Extrabold.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Extrabold.woff') format('woff'),
+       url('assets/fonts/Switzer-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-ExtraboldItalic';
+  src: url('assets/fonts/Switzer-ExtraboldItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-ExtraboldItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Switzer-Black';
+  src: url('assets/fonts/Switzer-Black.woff2') format('woff2'),
+       url('assets/fonts/Switzer-Black.woff') format('woff'),
+       url('assets/fonts/Switzer-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer-BlackItalic';
+  src: url('assets/fonts/Switzer-BlackItalic.woff2') format('woff2'),
+       url('assets/fonts/Switzer-BlackItalic.woff') format('woff'),
+       url('assets/fonts/Switzer-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* Zodiak Typefaces */
+
+@font-face {
+  font-family: 'Zodiak-Thin';
+  src: url('assets/fonts/Zodiak-Thin.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Thin.woff') format('woff'),
+       url('assets/fonts/Zodiak-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-ThinItalic';
+  src: url('assets/fonts/Zodiak-ThinItalic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-ThinItalic.woff') format('woff'),
+       url('assets/fonts/Zodiak-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Zodiak-Light';
+  src: url('assets/fonts/Zodiak-Light.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Light.woff') format('woff'),
+       url('assets/fonts/Zodiak-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-LightItalic';
+  src: url('assets/fonts/Zodiak-LightItalic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-LightItalic.woff') format('woff'),
+       url('assets/fonts/Zodiak-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Zodiak-Regular';
+  src: url('assets/fonts/Zodiak-Regular.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Regular.woff') format('woff'),
+       url('assets/fonts/Zodiak-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-Italic';
+  src: url('assets/fonts/Zodiak-Italic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Italic.woff') format('woff'),
+       url('assets/fonts/Zodiak-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Zodiak-Bold';
+  src: url('assets/fonts/Zodiak-Bold.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Bold.woff') format('woff'),
+       url('assets/fonts/Zodiak-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-BoldItalic';
+  src: url('assets/fonts/Zodiak-BoldItalic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-BoldItalic.woff') format('woff'),
+       url('assets/fonts/Zodiak-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Zodiak-Extrabold';
+  src: url('assets/fonts/Zodiak-Extrabold.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Extrabold.woff') format('woff'),
+       url('assets/fonts/Zodiak-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-ExtraboldItalic';
+  src: url('assets/fonts/Zodiak-ExtraboldItalic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-ExtraboldItalic.woff') format('woff'),
+       url('assets/fonts/Zodiak-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Zodiak-Black';
+  src: url('assets/fonts/Zodiak-Black.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-Black.woff') format('woff'),
+       url('assets/fonts/Zodiak-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zodiak-BlackItalic';
+  src: url('assets/fonts/Zodiak-BlackItalic.woff2') format('woff2'),
+       url('assets/fonts/Zodiak-BlackItalic.woff') format('woff'),
+       url('assets/fonts/Zodiak-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* Colors */
+
+:root {
+  --primary-900: #930010;
+  --white: #ffffff;
+  --neutral-gray: #666666; 
+}
+
+.switzer-md{
+  font-family: "Switzer-Medium";
+}
+
+.switzer-sb{
+  font-family: "Switzer-Semibold";
+}
+
+.switzer-r{
+  font-family: "Switzer-Regular";
+}
+
+.zodiak-r{
+  font-family: "Zodiak-Regular";
+}
+
+/* Buttons */
+
+/* Primary Button */
+
+.primary-button {
+  font-family: "Switzer-Semibold";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--white);
+  border-radius: 50px;
+  border: 2px solid #930010;
+  background-color: var(--primary-900);
+  width: fit-content;
+  padding: 12px 48px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 639px) {
+  .primary-button {
+    width: 100%;
+    padding: 8px 32px;
+    text-align: center;
+  }
+}
+
+.primary-button:hover {
+  cursor: pointer;
+  color: var(--primary-900);
+  background-color: var(--white);
+}
+
+
+.primary-button-2{
+  font-family: "Switzer-Semibold";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--white);
+  border-radius: 50px;
+  border: 2px solid #930010;
+  background-color: var(--primary-900);
+  width: 100%;
+  padding: 8px 32px;
+}
+
+@media (max-width: 639px) {
+  .primary-button-2{
+    width: 100%;
+  }
+}
+
+.primary-button-2:hover{
+  cursor: pointer !important;
+  color: var(--primary-900);
+  background-color: var(--white);
+}
+
+.secondary-button{
+  font-family: "Switzer-Semibold";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--primary-900);
+  border-radius: 50px;
+  border: 2px solid #930010;
+  background-color: transparent;
+  width: fit-content;
+  padding: 12px 48px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.secondary-button:hover{
+  color: var(--white);
+  background-color: var(--primary-900) !important;
+}
+
+@media (max-width: 639px) {
+  .secondary-button{
+    width: 100% !important;
+    padding: 8px 32px;
+    text-align: center;
+  }
+}
+
+.secondary-button-2{
+  font-family: "Switzer-Semibold";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--primary-900);
+  border-radius: 50px;
+  border: 2px solid #930010;
+  background-color: transparent;
+  width: fit-content;
+  padding: 8px 32px;
+}
+
+@media (max-width: 639px) {
+  .secondary-button-2{
+    padding: 4px 16px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.secondary-button-2:hover{
+  color: var(--white);
+  background-color: var(--primary-900) !important;
+}
+
+
+/* Title Text */
+
+.titleText{
+  font-family: 'Zodiak-Regular';
+  font-size: 96px;
+  letter-spacing: -5%;
+  line-height: 125%;
+}
+
+@media (max-width: 1280px) and (min-width: 768px) {
+  .titleText{
+    font-size: 68px;
+    letter-spacing: -5%;
+    line-height: 125%;
+  }
+}
+
+@media (max-width: 767px){
+  .titleText{
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px){
+  .titleText{
+    font-size: 40px;
+  }
+}
+
+/* Sub Title Text */
+
+.subtitleText{
+  font-family: 'Zodiak-Regular';
+  font-size: 64px;
+  letter-spacing: -5%;
+  line-height: 125%;
+}
+
+@media (max-width: 1280px) and (min-width: 768px) {
+  .subtitleText{
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px){
+  .subtitleText{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px){
+  .subtitleText{
+    font-size: 32px;
+  }
+}
+
+/* Body Text */
+
+.bodyText{
+  font-family: "Switzer-Regular";
+  font-size: 20px;
+  line-height: 150%;
+}
+
+@media (max-width: 1280px) and (min-width: 768px) {
+  .bodyText{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px){
+  .bodyText{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px){
+  .bodyText{
+    font-size: 14px;
+  }
+}
+
+/* Regular Text */
+
+.regularText{
+  font-family: "Switzer-Regular";
+  font-size: 16px;
+}
+
+@media (max-width: 1280px) and (min-width: 768px) {
+  .regularText{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px){
+  .regularText{
+    font-size: 14px;
+  }
+}
+
+
+/* Text Colors */
+
+.primaryText{
+  color: var(--primary-900);
+}
+
+.neutralText{
+  color: var(--neutral-gray);
+}
+
+/* Custom styles to prevent table cell content from breaking into multiple lines */
+.table-cell-nowrap {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;    /* Hide overflowed content */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+/* CSS for line clamping blog card description */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.h-screen {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Team Cards */
+

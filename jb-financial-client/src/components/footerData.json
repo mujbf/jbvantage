@@ -1,0 +1,50 @@
+{
+    "companyInfo": {
+      "logoSrc": "/logo.svg",
+      "description": "JB Financial is a licensed private investment management company in Sri Lanka since 2011, offering top-tier asset management services. With over a decade of experience, we've earned multiple awards for our Unit Trusts and adhere to industry best practices, including the CFA Institute's Asset Manager Code."
+    },
+    "socialLinks": [
+      {
+        "platform": "meta",
+        "url": "https://web.facebook.com/JBUnitTrusts?_rdc=1&_rdr",
+        "icon": "MetaLogo"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jbfinancial_lk/",
+        "icon": "InstagramLogo"
+      },
+      {
+        "platform": "x",
+        "url": "https://www.linkedin.com/company/jbvantage/",
+        "icon": "XLogo"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Funds",
+        "links": [
+          { "text": "Value Equity Fund", "url": "/funds/value-equity-fund" },
+          { "text": "Money Market Fund", "url": "/funds/money-market-fund" },
+          { "text": "Short Term Gilt Fund", "url": "/funds/short-term-gilt-fund" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "text": "About", "url": "/about" },
+          { "text": "Blog", "url": "/blog" },
+          { "text": "Team", "url": "/team" },
+          { "text": "Careers", "url": "/careers" }
+        ]
+      },
+      {
+        "title": "Private Wealth Management",
+        "links": [
+          { "text": "Private Asset Management", "url": "/private-asset-management" },
+          { "text": "Institutional Wealth Management", "url": "/institutional-wealth-management" }
+        ]
+      }
+    ]
+  }
+  
