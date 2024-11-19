@@ -1,7 +1,6 @@
 import HeroSection from "../components/sections/HeroSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import TextSection from "../components/sections/TextSection";
-import TestimonialSection from "../components/sections/TestimonialSection";
 
 function PvtAssetMgmt() {
   const groups = [
@@ -19,48 +18,6 @@ function PvtAssetMgmt() {
       title: "+ Comprehensive Portfolio Monitoring",
       description:
         "We continuously monitor your investment portfolio to ensure it remains aligned with your financial objectives. Our proactive approach allows us to make necessary adjustments and seize opportunities to optimize your portfolio performance.",
-    },
-  ];
-  const testimonials = [
-    {
-      logoSrc: "/images/testimonials/logo/1.png",
-      testimonialText:
-        "Investing in JB Vantage's unit trusts has been a game changer for our financial strategy. With a rich history of successful client outcomes, their expertise and management have consistently delivered impressive returns over the years. We couldn't be happier with their service!",
-      testimonialImageSrc: "/images/testimonials/user/1.png",
-      name: "Alex Johnson",
-      designation: "Managing Director, Financial Solutions Ltd.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/2.png",
-      testimonialText:
-        "Our experience with JB Vantage has been exceptional. Their unit trusts are meticulously managed, offering a blend of safety and growth that has greatly benefited our portfolio. The track record of satisfied clients speaks volumes about their commitment to excellence.",
-      testimonialImageSrc: "/images/testimonials/user/2.png",
-      name: "Emily Davis",
-      designation: "Senior Investment Analyst, Capital Growth Inc.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/3.png",
-      testimonialText:
-        "JB Vantage's unit trusts have proven to be a reliable investment with consistent performance. The firm’s dedication to client satisfaction and their ability to navigate market changes effectively make them a top choice for anyone looking to grow their wealth responsibly.",
-      testimonialImageSrc: "/images/testimonials/user/3.png",
-      name: "Michael Brown",
-      designation: "Chief Financial Officer, Wealth Builders Co.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/4.png",
-      testimonialText:
-        "We have been investing with JB Vantage for several years and have always been impressed with their unit trusts' performance. Their team is highly knowledgeable and their strategic approach has resulted in substantial gains for our investments. Highly recommended!",
-      testimonialImageSrc: "/images/testimonials/user/4.png",
-      name: "Sarah Wilson",
-      designation: "Portfolio Manager, Secure Invest Ltd.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/5.png",
-      testimonialText:
-        "JB Vantage has delivered outstanding results through their unit trusts. Their deep understanding of market dynamics and dedication to achieving client goals are evident in the consistent and strong returns we've experienced. It’s been a pleasure working with them.",
-      testimonialImageSrc: "/images/testimonials/user/5.png",
-      name: "David Lee",
-      designation: "Director of Investments, Horizon Financial Group",
     },
   ];
 
@@ -90,7 +47,6 @@ function PvtAssetMgmt() {
         mainTitle="Customized investment strategies designed around you."
         mainDescription="Whatever your goals may be, we design your portfolio around them. Our diverse team and longstanding expertise allow us to provide a highly personalized advisory service with respect to investing in public markets."
       />
-      <TestimonialSection testimonials={testimonials} />
     </>
   );
 }

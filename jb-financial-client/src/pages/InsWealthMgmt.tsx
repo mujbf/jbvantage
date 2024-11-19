@@ -1,7 +1,6 @@
 import HeroSection from "../components/sections/HeroSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import TextSection from "../components/sections/TextSection";
-import TestimonialSection from "../components/sections/TestimonialSection";
 
 function InsWealthMgmt() {
   const groups = [
@@ -21,49 +20,6 @@ function InsWealthMgmt() {
         "Investing is an art and a science where both experience and expertise counts. Our lead fund managers have been in the industry since 1994 and possess the wisdom that comes with it.",
     },
   ];
-  const testimonials = [
-    {
-      logoSrc: "/images/testimonials/logo/1.png",
-      testimonialText:
-        "Investing in JB Vantage's unit trusts has been a game changer for our financial strategy. With a rich history of successful client outcomes, their expertise and management have consistently delivered impressive returns over the years. We couldn't be happier with their service!",
-      testimonialImageSrc: "/images/testimonials/user/1.png",
-      name: "Alex Johnson",
-      designation: "Managing Director, Financial Solutions Ltd.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/2.png",
-      testimonialText:
-        "Our experience with JB Vantage has been exceptional. Their unit trusts are meticulously managed, offering a blend of safety and growth that has greatly benefited our portfolio. The track record of satisfied clients speaks volumes about their commitment to excellence.",
-      testimonialImageSrc: "/images/testimonials/user/2.png",
-      name: "Emily Davis",
-      designation: "Senior Investment Analyst, Capital Growth Inc.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/3.png",
-      testimonialText:
-        "JB Vantage's unit trusts have proven to be a reliable investment with consistent performance. The firm’s dedication to client satisfaction and their ability to navigate market changes effectively make them a top choice for anyone looking to grow their wealth responsibly.",
-      testimonialImageSrc: "/images/testimonials/user/3.png",
-      name: "Michael Brown",
-      designation: "Chief Financial Officer, Wealth Builders Co.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/4.png",
-      testimonialText:
-        "We have been investing with JB Vantage for several years and have always been impressed with their unit trusts' performance. Their team is highly knowledgeable and their strategic approach has resulted in substantial gains for our investments. Highly recommended!",
-      testimonialImageSrc: "/images/testimonials/user/4.png",
-      name: "Sarah Wilson",
-      designation: "Portfolio Manager, Secure Invest Ltd.",
-    },
-    {
-      logoSrc: "/images/testimonials/logo/5.png",
-      testimonialText:
-        "JB Vantage has delivered outstanding results through their unit trusts. Their deep understanding of market dynamics and dedication to achieving client goals are evident in the consistent and strong returns we've experienced. It’s been a pleasure working with them.",
-      testimonialImageSrc: "/images/testimonials/user/5.png",
-      name: "David Lee",
-      designation: "Director of Investments, Horizon Financial Group",
-    },
-  ];
-
   return (
     <>
       <HeroSection
@@ -100,7 +56,7 @@ function InsWealthMgmt() {
         mainTitle="A better way to manage an institutional portfolio"
         mainDescription="Our Institutional Wealth Management service is tailored to meet the needs of corporates and family offices, providing them with the expertise and support they need to maximize the return of their public market investments."
       />
-      <TestimonialSection testimonials={testimonials} />
+      {/* <TestimonialSection testimonials={testimonials} /> */}
     </>
   );
 }
