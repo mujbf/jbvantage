@@ -22,15 +22,15 @@ const MMF: React.FC = () => {
   // ];
 
   const [moneyMarketFundUrl, setMoneyMarketFundUrl] = useState("");
-  const [moneyMarketFundUrl2, setMoneyMarketFundUrl2] = useState("");
+  // const [moneyMarketFundUrl2, setMoneyMarketFundUrl2] = useState("");
 
   useEffect(() => {
     const fetchDocumentUrls = async () => {
       try {
         const response = await axios.get(`${SERVER_URL}/api/fund-doc-urls`);
-        const { moneyMarketFundUrl, moneyMarketFundUrl2 } = response.data;
+        const { moneyMarketFundUrl } = response.data;
         setMoneyMarketFundUrl(moneyMarketFundUrl);
-        setMoneyMarketFundUrl2(moneyMarketFundUrl2);
+        // setMoneyMarketFundUrl2(moneyMarketFundUrl2);
       } catch (error) {
         console.error("Error fetching document URLs:", error);
       }
@@ -82,29 +82,29 @@ const MMF: React.FC = () => {
       title: "Monthly Factsheet",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Monthly Factsheet for September 2024."],
+      tags: ["Latest monthly fact sheet for the fund"],
       buttonText: "View Document",
       filePath: moneyMarketFundUrl,
       imagePath: "/images/documents/mmf-mf.jpg",
     },
-    {
-      title: "GIPS Report",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["GIPS Report for September 2024."],
-      buttonText: "View Document",
-      filePath: moneyMarketFundUrl2,
-      imagePath: "/images/documents/mmf-gr.jpg",
-    },
-    {
-      title: "Semi Annual Report",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["2024 Semi Annual Report as at June 2024."],
-      buttonText: "View Document",
-      filePath: "/docs/mmf/semi_annual_report.pdf",
-      imagePath: "/images/documents/mmf-sar.jpg",
-    },
+    // {
+    //   title: "GIPS Report",
+    //   fileType: "PDF",
+    //   fileSize: "3.9MB",
+    //   tags: ["GIPS Report for September 2024."],
+    //   buttonText: "View Document",
+    //   filePath: moneyMarketFundUrl2,
+    //   imagePath: "/images/documents/mmf-gr.jpg",
+    // },
+    // {
+    //   title: "Semi Annual Report",
+    //   fileType: "PDF",
+    //   fileSize: "3.9MB",
+    //   tags: ["2024 Semi Annual Report as at June 2024."],
+    //   buttonText: "View Document",
+    //   filePath: "/docs/mmf/semi_annual_report.pdf",
+    //   imagePath: "/images/documents/mmf-sar.jpg",
+    // },
   ];
   const fundStats = {
     objective: "Regular income and liquidity",
@@ -150,7 +150,7 @@ const MMF: React.FC = () => {
       <FundHeader
         title="JB Vantage Money Market Fund"
         description="Consider investing in our Money Market Fund as a better alternative to traditional fixed deposits and bank savings accounts."
-        tags={["Flexible", "Low-Risk"]}
+        tags={["Flexible", "Low Cost"]}
       />
       <FundDetailsSection
         heading="Fund Objectives & Strategy"

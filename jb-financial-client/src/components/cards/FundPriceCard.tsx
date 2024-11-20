@@ -8,6 +8,7 @@ interface CardProps {
   sellPrice: number;
   nav?: number; // Make nav optional for conditional rendering
   showSecondBuyPrice?: boolean; // Optional flag to show the second buy price
+  date: string;
 }
 
 const FundPriceCard: React.FC<CardProps> = ({
@@ -18,6 +19,7 @@ const FundPriceCard: React.FC<CardProps> = ({
   sellPrice,
   nav, // Nav is destructured here
   showSecondBuyPrice = false, // Default to false if not provided
+  date,
 }) => {
   return (
     <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 h-full">
@@ -29,6 +31,9 @@ const FundPriceCard: React.FC<CardProps> = ({
           </span>
           <span className="switzer-sb text-lg md:text-2xl text-primary-900 text-center">
             {subtitle}
+          </span>
+          <span className="regularText text-center text-neutral-mid">
+            {date}
           </span>
         </div>
 

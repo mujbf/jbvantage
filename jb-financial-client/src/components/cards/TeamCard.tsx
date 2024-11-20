@@ -14,7 +14,7 @@ interface TeamCardProps {
 const teamCardData: TeamCardProps[] = [
   {
     name: "Christine Dias Bandaranaike, CFA",
-    designation: "Portfolio Manager & CEO",
+    designation: "CEO & Portfolio Manager",
     imageUrl: "/images/team/christine.png",
     description:
       "Set up JB Financial's (JBF) wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and independently advised institutions on setting investment policy.",
@@ -56,10 +56,17 @@ const teamCardData: TeamCardProps[] = [
   },
   {
     name: "Shanuka Jayaweera",
-    designation: "Manager-Operations",
+    designation: "Head of Operations",
     imageUrl: "/images/team/shanuka.png",
     description:
       "Shanuka joined JBF in 2014 as its Senior Fund Accountant and now heads both the unit trust and private wealth management operations. She is responsible for fund valuations, financial accounts of the funds and overall operational reporting and trade verification. Formerly at KPMG, Sri Lanka, she spent 3.5 years with the firm.",
+  },
+  {
+    name: "Avishka de Silva",
+    designation: "Assistant Portfolio Manager",
+    imageUrl: "/images/team/avishka.png",
+    description:
+      "Avishka joined in 2024. Prior to JBF, he worked at Acuity Knowledge Partners as an investment research analyst serving a US-based hedge fund client. He graduated with a BCom (Major in Econometrics and Minor in Actuarial Studies) from Monash University, Australia. Avishka has completed the CFA program and is a pending charter holder.",
   },
   {
     name: "Malmi Dewage",
@@ -70,7 +77,7 @@ const teamCardData: TeamCardProps[] = [
   },
   {
     name: "Pavithra Karunakaran",
-    designation: "Assistant Fund Accountant",
+    designation: "Fund Accountant",
     imageUrl: "/images/team/pavithra.png",
     description:
       "Pavithra joined JBF in 2021 as assistant Fund Accountant after 1.5 years at HSBC. She performs the daily valuations of the Gilt and other unit trusts as well as providing back office support for all investment transactions. Pavithra holds a BA Hons in Business Administration and has completed the Strategic level at CA Sri Lanka",
@@ -81,13 +88,6 @@ const teamCardData: TeamCardProps[] = [
     imageUrl: "/images/team/danu.png",
     description:
       "Dhanushika joined JBF in 2018 as Assistant Registrar and now takes overall responsibility for the registrar function at JBF. Dhanushika counts 2 years experience in finance with Swarnamahal Finance prior to joining. Dhanushika has completed a postgraduate Diploma (Pearson BTEC L7) Strategic Management & Leadership",
-  },
-  {
-    name: "Avishka de Silva",
-    designation: "Senior Associate",
-    imageUrl: "/images/team/avishka.png",
-    description:
-      "Avishka joined in 2024. Prior to JBF, he worked at Acuity Knowledge Partners as an investment research analyst serving a US-based hedge fund client. He graduated with a BCom (Major in Econometrics and Minor in Actuarial Studies) from Monash University, Australia. Avishka has completed the CFA program and is a pending charter holder.",
   },
 ];
 

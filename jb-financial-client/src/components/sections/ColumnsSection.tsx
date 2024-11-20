@@ -116,6 +116,7 @@ const ColumnsSection: React.FC<ColumnsSectionProps> = ({
       subtitle: fundType,
       title: "JB Vantage",
       _id: latestData._id,
+      date: latestData.date,
     };
   };
 

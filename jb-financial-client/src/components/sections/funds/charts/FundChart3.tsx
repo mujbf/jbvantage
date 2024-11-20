@@ -93,7 +93,7 @@ const FundChart3: React.FC<FundChart3Props> = ({}) => {
       x: {
         title: {
           display: true,
-          text: "Date",
+          text: "Click on the legend above to isolate a data series",
           font: {
             size: 12,
             family: "Switzer-Semibold",
@@ -190,7 +190,7 @@ const FundChart3: React.FC<FundChart3Props> = ({}) => {
             {ytdValue !== null ? `${ytdValue}` : "Loading..."}
           </h2>
           <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
-            Y7 Day Yield :{" "}
+            7 Day Yield :{" "}
             <span className="text-neutral-light" id="ytd-date-sgf">
               {ytdDate ? `as at ${ytdDate}` : "Loading..."}
             </span>
