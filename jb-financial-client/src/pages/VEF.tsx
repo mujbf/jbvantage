@@ -82,7 +82,7 @@ const VEF: React.FC = () => {
       title: "Monthly Factsheet",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Latest monthly fact sheet for the fund"],
+      tags: ["Latest monthly fact sheetfor the fund."],
       buttonText: "View Document",
       filePath: valueEquityFundUrl,
       imagePath: "/images/documents/vef-mf.jpg",
@@ -111,7 +111,7 @@ const VEF: React.FC = () => {
     strategy: "Invest in undervalued large and mid-cap stocks",
     benchmark: "S&P Sri Lanka 20 Total Returns Index",
     investment: "Value investing",
-    fundSize: "LKR 2.5 Billion (Nov '24)",
+    fundSize: "LKR 17.6 Billion (Sep '24)",
     totalRatio: "2.15% (Dec 31, 2023)",
   };
   const faqData = [
@@ -143,7 +143,7 @@ const VEF: React.FC = () => {
       <FundHeader
         title="JB Vantage Value Equity Fund"
         description="Consider investing in our Value Equity Fund for superior, long-term returns from the Colombo Stock Exchange with ease and efficiency."
-        tags={["Diversified", "Sustainable", "High Returns"]}
+        tags={["Growth", "Long Term", "High Returns"]}
       />
       <FundDetailsSection
         heading="Fund Objectives & Strategy"

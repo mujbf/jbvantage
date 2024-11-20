@@ -82,7 +82,7 @@ const MMF: React.FC = () => {
       title: "Monthly Factsheet",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Latest monthly fact sheet for the fund"],
+      tags: ["Latest monthly factsheet for the fund."],
       buttonText: "View Document",
       filePath: moneyMarketFundUrl,
       imagePath: "/images/documents/mmf-mf.jpg",
@@ -111,7 +111,7 @@ const MMF: React.FC = () => {
     strategy: "Invest in short-term corporate issues",
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "‘Investment grade’, short term instruments",
-    fundSize: "LKR 19.88 Billion",
+    fundSize: "LKR 2.6 Billion (Sep'24)",
     totalRatio: "0.73%",
   };
   const faqData = [

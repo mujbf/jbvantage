@@ -82,7 +82,7 @@ const SGF: React.FC = () => {
       title: "Monthly Factsheet",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Latest monthly fact sheet for the fund"],
+      tags: ["Latest monthly factsheet for the fund."],
       buttonText: "View Document",
       filePath: shortTermGiltFundUrl,
       imagePath: "/images/documents/sgf-mf.jpg",
@@ -111,7 +111,7 @@ const SGF: React.FC = () => {
     strategy: "Invest in government securities",
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "Short-term government securities and REPOs",
-    fundSize: "LKR 2.58 Billion",
+    fundSize: "LKR 2.4 Billion (Sep'24)",
     totalRatio: "0.56%",
   };
   const faqData = [
