@@ -325,7 +325,11 @@ const FundAdmin: React.FC = () => {
     shortTermGiltFundPerformanceData,
     setShortTermGiltFundPerformanceData,
   ] = useState<FundData[]>([]);
-  const [selectedChartType] = useState<ChartType>("value-eq");
+  const chartTypes: { [key: string]: ChartType } = {
+    "Value Equity Fund": "value-eq",
+    "Money Market Fund": "money-market",
+    "Short Term Gilt Fund": "short-term",
+  };
 
   useEffect(() => {
     // Fetch data on component mount
@@ -409,7 +413,7 @@ const FundAdmin: React.FC = () => {
   };
 
   return (
-    <div className="bg-white px-4 py-8 md:p-20 2xl:px-40 2xl:py-20 flex flex-col gap-4 md:gap-20">
+    <div className="bg-white px-4 py-8 md:p-20 2xl:px-40 2xl:py-20 flex flex-col gap-4 md:gap-20 mt-20">
       <div className="flex flex-col gap-4">
         <h2 className="subtitleText text-neutral-mid">Fund Prices</h2>
         <p className="bodyText text-neutral-mid">Update fund prices daily.</p>
@@ -443,16 +447,15 @@ const FundAdmin: React.FC = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
         <PerformanceTable
-          chartType={selectedChartType}
+          chartType={chartTypes["Value Equity Fund"]}
           cardTitle="Value Equity Fund"
         />
-
         <PerformanceTable
-          chartType={"money-market"}
+          chartType={chartTypes["Money Market Fund"]}
           cardTitle="Money Market Fund"
         />
         <PerformanceTable
-          chartType={"short-term"}
+          chartType={chartTypes["Short Term Gilt Fund"]}
           cardTitle="Short Term Gilt Fund"
         />
       </div>

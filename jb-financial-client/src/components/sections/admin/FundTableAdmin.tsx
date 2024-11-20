@@ -79,10 +79,15 @@ const FundTableAdmin: React.FC = () => {
   };
 
   return (
-    <div className="bg-white px-4 py-8 md:px-8 lg:p-20 2xl:px-40 2xl:py-20 flex flex-col gap-6 md:gap-8 lg:gap-16">
-      <h2 className="subtitleText text-neutral-mid text-left">
-        Fund performance summary (Admin)
-      </h2>
+    <div className="bg-white px-4 py-8 md:py-20 2xl:px-20 2xl:py-20 flex flex-col gap-6 md:gap-8 lg:gap-16">
+      <div className="flex flex-col gap-4">
+        <h2 className="subtitleText text-neutral-mid">
+          Fund Performance Summary
+        </h2>
+        <p className="bodyText text-neutral-mid">
+          Update fund performance summary table values.
+        </p>
+      </div>
       <div className="flex items-center gap-2">
         <label htmlFor="asAtDate" className="bodyText">
           As at:
@@ -167,7 +172,7 @@ const FundTableAdmin: React.FC = () => {
       >
         {isSubmitting ? "Saving changes..." : "Submit Changes"}
       </button>
-      <div>
+      {/* <div>
         <p className="regularText text-left">
           Returns shown are after all taxes, fees and expenses and based on NAV
         </p>
@@ -179,7 +184,7 @@ const FundTableAdmin: React.FC = () => {
           **TER - Total Expense Ratio, and is calculated by dividing total fund
           costs by total fund assets.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

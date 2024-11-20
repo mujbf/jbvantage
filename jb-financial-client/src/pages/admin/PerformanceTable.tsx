@@ -22,7 +22,7 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
     _id: "",
     Date: "",
   });
-  const [isUpdating, setIsUpdating] = useState<boolean>(false); // State to track if we are updating
+  const [isUpdating, setIsUpdating] = useState<boolean>(false);
 
   useEffect(() => {
     fetchData();
@@ -35,22 +35,20 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       );
       const sortedData = response.data.sort(
         (a: PerformanceData, b: PerformanceData) => {
-          // Sort by Date in descending order
           return new Date(b.Date).getTime() - new Date(a.Date).getTime();
         }
       );
-      setData(sortedData.slice(0, 5)); // Get only the most recent 5 entries
+      setData(sortedData.slice(0, 5));
       if (sortedData.length > 0) {
-        // Initialize newEntry without redundant property definitions
         const initialEntry = Object.keys(sortedData[0]).reduce(
           (acc, key) => {
             if (key !== "_id" && key !== "Date" && key !== "__v") {
-              acc[key] = ""; // Initialize other fields
+              acc[key] = "";
             }
             return acc;
           },
           { _id: "", Date: "" } as PerformanceData
-        ); // Declare _id and Date explicitly once
+        );
 
         setNewEntry(initialEntry);
       }
@@ -62,35 +60,30 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    // Check if the selected date already exists in the data
     if (name === "Date") {
       const existingEntry = data.find((entry) => entry.Date === value);
       if (existingEntry) {
-        // Populate newEntry with the existing entry's values
         setNewEntry(existingEntry);
-        setIsUpdating(true); // Set to update mode
+        setIsUpdating(true);
       } else {
-        // Reset newEntry if the date is new
         setNewEntry((prev) => ({
           ...Object.keys(prev).reduce((acc, key) => {
             if (key !== "_id" && key !== "Date" && key !== "__v") {
-              acc[key] = ""; // Reset other fields
+              acc[key] = "";
             }
             return acc;
           }, {} as PerformanceData),
-          Date: value, // Set Date after resetting other fields
+          Date: value,
         }));
-        setIsUpdating(false); // Set to add mode
+        setIsUpdating(false);
       }
     } else {
-      // If not handling the date, just update the field
       setNewEntry((prevEntry) => ({
         ...prevEntry,
         [name]: value,
       }));
     }
 
-    // Debugging: Log the newEntry state after each change
     console.log("Current newEntry state:", { ...newEntry, [name]: value });
   };
 
@@ -98,19 +91,16 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
     e.preventDefault();
     try {
       const entryToSend: Partial<PerformanceData> = { ...newEntry };
-      delete entryToSend._id; // Remove _id if present
+      delete entryToSend._id;
 
-      // Log the entry being sent for debugging
       console.log("Submitting entry:", entryToSend);
 
       if (isUpdating) {
-        // Update the existing entry
         await axios.put(
           `${SERVER_URL}/api/performance-${chartType}/${newEntry._id}`,
           entryToSend
         );
       } else {
-        // Add a new entry
         await axios.post(
           `${SERVER_URL}/api/performance-${chartType}`,
           entryToSend
@@ -119,23 +109,61 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
 
       await fetchData();
 
-      // Create a new empty entry for resetting
       const newEmptyEntry: PerformanceData = {
         _id: "",
         Date: "",
         ...Object.keys(data[0] || {}).reduce((acc, key) => {
           if (key !== "_id" && key !== "Date" && key !== "__v") {
-            acc[key] = ""; // Reset other fields
+            acc[key] = "";
           }
           return acc;
         }, {} as Omit<PerformanceData, "_id" | "Date">),
       };
 
-      // Reset newEntry to initial state after submission
       setNewEntry(newEmptyEntry);
-      setIsUpdating(false); // Reset to add mode after submission
+      setIsUpdating(false);
     } catch (error) {
       console.error("Error adding/updating entry:", error);
+    }
+  };
+
+  // New delete function
+  const handleDelete = async () => {
+    if (!isUpdating || !newEntry._id) {
+      alert("Please select an entry to delete");
+      return;
+    }
+
+    // Map chartType to correct endpoint path
+    const endpointMap = {
+      "value-eq": "value-equity-fund",
+      "money-market": "money-market-fund",
+      "short-term": "short-term-gilt-fund",
+    };
+
+    try {
+      await axios.delete(
+        `${SERVER_URL}/funds/${endpointMap[chartType]}/${newEntry._id}`
+      );
+
+      await fetchData();
+
+      const newEmptyEntry: PerformanceData = {
+        _id: "",
+        Date: "",
+        ...Object.keys(data[0] || {}).reduce((acc, key) => {
+          if (key !== "_id" && key !== "Date" && key !== "__v") {
+            acc[key] = "";
+          }
+          return acc;
+        }, {} as Omit<PerformanceData, "_id" | "Date">),
+      };
+
+      setNewEntry(newEmptyEntry);
+      setIsUpdating(false);
+    } catch (error) {
+      console.error("Error deleting entry:", error);
+      alert("Failed to delete entry");
     }
   };
 
@@ -218,11 +246,10 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
           ))}
       <button type="submit" className="primary-button">
         {isUpdating ? "Update Entry" : "Add Entry"}
-      </button>{" "}
-      {/* Change button text */}
-      <button type="submit" className="secondary-button">
+      </button>
+      <button type="button" onClick={handleDelete} className="secondary-button">
         Delete Entry
-      </button>{" "}
+      </button>
     </form>
   );
 
@@ -239,8 +266,7 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       {renderTable()}
       <h3 className="switzer-sb text-neutral-dark px-4 md:px-8">
         {isUpdating ? "Update Entry" : "Add New Entry"}
-      </h3>{" "}
-      {/* Change heading based on mode */}
+      </h3>
       {renderForm()}
     </div>
   );

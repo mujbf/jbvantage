@@ -56,16 +56,17 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
 
   return (
     <div className="flex flex-col gap-6 md:gap-8 lg:gap-16">
-      <h2 className="subtitleText text-neutral-mid text-left">
-        Fund Documents
-      </h2>
-      <p className="bodyText text-neutral-mid">Upload the monthly factsheets</p>
+      <div className="flex flex-col gap-4">
+        <h2 className="subtitleText text-neutral-mid">Fund Documents</h2>
+        <p className="bodyText text-neutral-mid">Update fund documents.</p>
+      </div>
       <div className="flex gap-4 md:gap-8">
         {/* Value Equity Fund */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Value Equity Fund</p>
+          <br />
+          <p className="regularText">Monthly Factsheet</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">Monthly Factsheet</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
@@ -78,8 +79,8 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
+          <p className="regularText">GIPS Report</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">GIPS Report</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
@@ -99,8 +100,9 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
         {/* Money Market Fund */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Money Market Fund</p>
+          <br />
+          <p className="regularText">Monthly Factsheet</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">Monthly Factsheet</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
@@ -113,8 +115,8 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
+          <p className="regularText">GIPS Report</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">GIPS Report</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
@@ -134,8 +136,9 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
         {/* Short Term Gilt Fund */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Short Term Gilt Fund</p>
+          <br />
+          <p className="regularText">Monthly Factsheet</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">Monthly Factsheet</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
@@ -150,8 +153,8 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
+          <p className="regularText">GIPS Report</p>
           <div className="flex gap-4 items-center">
-            <p className="regularText">GIPS Report</p>
             <input
               type="file"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
