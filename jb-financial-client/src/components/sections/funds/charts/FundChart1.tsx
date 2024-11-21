@@ -111,10 +111,10 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
       x: {
         title: {
           display: true,
-          text: "Click on the legend above to isolate a data series",
+          text: "ⓘ Click on the legend above to isolate a data series",
           font: {
             size: 12,
-            family: "Switzer-Semibold",
+            family: "Switzer-Italic",
           },
         },
         grid: {

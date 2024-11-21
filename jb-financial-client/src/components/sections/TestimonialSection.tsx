@@ -22,7 +22,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 10000); // Change slide every 10 seconds
+    }, 20000); // Change slide every 20 seconds
 
     return () => clearInterval(interval);
   }, [testimonials.length]);

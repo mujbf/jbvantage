@@ -82,7 +82,7 @@ const VEF: React.FC = () => {
       title: "Monthly Factsheet",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Latest monthly fact sheetfor the fund."],
+      tags: ["Latest monthly factsheet for the fund."],
       buttonText: "View Document",
       filePath: valueEquityFundUrl,
       imagePath: "/images/documents/vef-mf.jpg",

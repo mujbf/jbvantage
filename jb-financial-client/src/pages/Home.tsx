@@ -109,7 +109,7 @@ const Home: React.FC = () => {
         imageUrl="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/award-winning.webp"
         imageColumn={{
           title: "RECOGNIZED BY CFA",
-          text: "We have been recognized multiple times by the CFA Society of Sri Lanka as one of the best unit trusts in the country.",
+          text: "We have been recognized multiple times by the CFA Society Sri Lanka as one of the best unit trusts in the country.",
           imageUrl: "/images/awards/cfa.png",
         }}
         swapContentAndImage={true}

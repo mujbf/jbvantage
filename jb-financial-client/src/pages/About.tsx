@@ -7,8 +7,8 @@ import NumbersSection from "../components/sections/NumbersSection";
 
 const About: React.FC = () => {
   const groups = [
-    { title: "LKR 27 Billion +", description: "Assets Under Management (AUM)" },
-    { title: "380 + ", description: "Satisfied Investors" },
+    { title: "LKR 22 Billion +", description: "Assets Under Management (AUM)" },
+    { title: "850 + ", description: "Satisfied Investors" },
     { title: "14 Years", description: "Of Managing Investments" },
   ];
 

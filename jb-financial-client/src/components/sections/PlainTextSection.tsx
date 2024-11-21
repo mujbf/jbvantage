@@ -9,7 +9,7 @@ const PlainTextSection: React.FC<PlainTextSectionProps> = ({}) => {
         Be part of an award winning and fast growing investment management team
       </h4>
       <p className="bodyText text-neutral-mid text-center w-full lg:w-[80%]">
-        Since 2013, we've been at the forefront of the investment management
+        Since 2011, we've been at the forefront of the investment management
         industry in Sri Lanka. Among us are economists, experienced portfolio
         managers, and seasoned equity advisors who are among the most respected
         in Sri Lanka.

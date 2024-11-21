@@ -62,7 +62,7 @@ const faqData = [
   {
     question: "What about Taxation?",
     answer:
-      "As tax laws are subject to change, please talk to your tax advisor on this matter. Separately, while JB Financial is not a participating FFI* under FATCA, we have given our consent to the Trustee, Deutsche Bank AG, to disclose relevant transaction information to the United States Internal Revenue Service or any FATCA related legal body as required.",
+      "You can expect to be taxed at the marginal tax rate. But, as tax laws are subject to change, please talk to your tax advisor on this matter. Separately, while JB Financial is not a participating FFI* under FATCA, we have given our consent to the Trustee, Deutsche Bank AG, to disclose relevant transaction information to the United States Internal Revenue Service or any FATCA related legal body as required.",
   },
 ];
 

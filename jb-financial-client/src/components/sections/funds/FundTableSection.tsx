@@ -129,7 +129,7 @@ const FundTableViewer: React.FC = () => {
           Returns shown are after all taxes, fees and expenses and based on NAV
         </p>
         <p className="regularText text-left">
-          All returns shown are annualized except for VEF less than 1 year.
+          All returns shown are annualized except for VEF {`< 1`} year.
         </p>
         <p className="regularText text-left">*SI – Since Inception</p>
         {/* <p className="regularText text-left">

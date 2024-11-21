@@ -17,7 +17,7 @@ const teamCardData: TeamCardProps[] = [
     designation: "CEO & Portfolio Manager",
     imageUrl: "/images/team/christine.png",
     description:
-      "Set up JB Financial's (JBF) wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and independently advised institutions on setting investment policy.",
+      "Set up JB Financial's (JBF) wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and has independently advised institutions on setting investment policy.",
   },
   {
     name: "Murtaza Jafferjee, CFA",
