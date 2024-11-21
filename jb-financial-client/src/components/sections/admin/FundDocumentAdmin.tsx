@@ -79,7 +79,7 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
-          <p className="regularText">GIPS Report</p>
+          <p className="regularText">Historical Unit Prices</p>
           <div className="flex gap-4 items-center">
             <input
               type="file"
@@ -115,7 +115,7 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
-          <p className="regularText">GIPS Report</p>
+          <p className="regularText">Historical Unit Prices</p>
           <div className="flex gap-4 items-center">
             <input
               type="file"
@@ -153,7 +153,7 @@ const FundDocumentAdmin: React.FC<FundDocumentAdminProps> = ({}) => {
               Submit
             </button>
           </div>
-          <p className="regularText">GIPS Report</p>
+          <p className="regularText">Historical Unit Prices</p>
           <div className="flex gap-4 items-center">
             <input
               type="file"

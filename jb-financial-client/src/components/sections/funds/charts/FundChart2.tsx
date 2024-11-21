@@ -157,7 +157,12 @@ const FundChart2: React.FC<FundChart2Props> = ({}) => {
       tooltip: {
         callbacks: {
           title: function (tooltipItems) {
-            return tooltipItems[0].label || "";
+            // Convert the date to the format "2024 Nov"
+            const date = new Date(tooltipItems[0].label || "");
+            return new Intl.DateTimeFormat("en", {
+              year: "numeric",
+              month: "short",
+            }).format(date);
           },
         },
       },

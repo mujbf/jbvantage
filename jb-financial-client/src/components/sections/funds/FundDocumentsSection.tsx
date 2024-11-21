@@ -42,8 +42,8 @@ const FundDocumentsSection: React.FC<FundDocumentsSectionProps> = ({
                 <h5 className="zodiak-r text-xl md:text-4xl text-neutral-mid">
                   {doc.title}
                 </h5>
-                <p className="bodyText text-neutral-mid">
-                  {doc.fileType} - <span>{doc.fileSize}</span>
+                <p className="bodyText text-neutral-light py-1 px-4 w-fit border-2 border-neutral-lighter rounded-md">
+                  {doc.fileType}
                 </p>
               </div>
               <div className="flex flex-col md:flex-row justify-between gap-4">

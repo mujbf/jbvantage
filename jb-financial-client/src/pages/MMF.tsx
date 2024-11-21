@@ -22,15 +22,16 @@ const MMF: React.FC = () => {
   // ];
 
   const [moneyMarketFundUrl, setMoneyMarketFundUrl] = useState("");
-  // const [moneyMarketFundUrl2, setMoneyMarketFundUrl2] = useState("");
+  const [moneyMarketFundUrl2, setMoneyMarketFundUrl2] = useState("");
 
   useEffect(() => {
     const fetchDocumentUrls = async () => {
       try {
         const response = await axios.get(`${SERVER_URL}/api/fund-doc-urls`);
         const { moneyMarketFundUrl } = response.data;
+        const { moneyMarketFundUrl2 } = response.data;
         setMoneyMarketFundUrl(moneyMarketFundUrl);
-        // setMoneyMarketFundUrl2(moneyMarketFundUrl2);
+        setMoneyMarketFundUrl2(moneyMarketFundUrl2);
       } catch (error) {
         console.error("Error fetching document URLs:", error);
       }
@@ -86,6 +87,15 @@ const MMF: React.FC = () => {
       buttonText: "View Document",
       filePath: moneyMarketFundUrl,
       imagePath: "/images/documents/mmf-mf.jpg",
+    },
+    {
+      title: "Historical Unit Prices",
+      fileType: "XLSX",
+      fileSize: "3.9MB",
+      tags: ["Historical unit price sheet the fund."],
+      buttonText: "Download File",
+      filePath: moneyMarketFundUrl2,
+      imagePath: "/images/documents/mmf-hup.jpg",
     },
     // {
     //   title: "GIPS Report",

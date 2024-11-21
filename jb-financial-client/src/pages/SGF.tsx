@@ -29,6 +29,7 @@ const SGF: React.FC = () => {
       try {
         const response = await axios.get(`${SERVER_URL}/api/fund-doc-urls`);
         const { shortTermGiltFundUrl } = response.data;
+        const { shortTermGiltFundUrl2 } = response.data;
         setShortTermGiltFundUrl(shortTermGiltFundUrl);
         setShortTermGiltFundUrl2(shortTermGiltFundUrl2);
       } catch (error) {
@@ -86,6 +87,15 @@ const SGF: React.FC = () => {
       buttonText: "View Document",
       filePath: shortTermGiltFundUrl,
       imagePath: "/images/documents/sgf-mf.jpg",
+    },
+    {
+      title: "Historical Unit Prices",
+      fileType: "XLSX",
+      fileSize: "3.9MB",
+      tags: ["Historical unit price sheet the fund."],
+      buttonText: "Download File",
+      filePath: shortTermGiltFundUrl2,
+      imagePath: "/images/documents/sgf-hup.jpg",
     },
     // {
     //   title: "GIPS Report",

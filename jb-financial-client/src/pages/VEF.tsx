@@ -29,6 +29,7 @@ const VEF: React.FC = () => {
       try {
         const response = await axios.get(`${SERVER_URL}/api/fund-doc-urls`);
         const { valueEquityFundUrl } = response.data;
+        const { valueEquityFundUrl2 } = response.data;
         setValueEquityFundUrl(valueEquityFundUrl);
         setValueEquityFundUrl2(valueEquityFundUrl2);
       } catch (error) {
@@ -86,6 +87,15 @@ const VEF: React.FC = () => {
       buttonText: "View Document",
       filePath: valueEquityFundUrl,
       imagePath: "/images/documents/vef-mf.jpg",
+    },
+    {
+      title: "Historical Unit Prices",
+      fileType: "XLSX",
+      fileSize: "3.9MB",
+      tags: ["Historical unit price sheet the fund."],
+      buttonText: "Download File",
+      filePath: valueEquityFundUrl2,
+      imagePath: "/images/documents/vef-hup.jpg",
     },
     // {
     //   title: "GIPS Report",
