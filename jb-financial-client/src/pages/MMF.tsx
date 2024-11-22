@@ -122,7 +122,7 @@ const MMF: React.FC = () => {
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "‘Investment grade’, short term instruments",
     fundSize: "LKR 17.6 Billion (Sep'24)",
-    totalRatio: "0.73%",
+    totalRatio: "0.73% (Dec 31, 2023)",
   };
   const faqData = [
     {
@@ -155,7 +155,7 @@ const MMF: React.FC = () => {
       <FundHeader
         title="JB Vantage Money Market Fund"
         description="Consider investing in our Money Market Fund as a better alternative to traditional fixed deposits and bank savings accounts."
-        tags={["Flexible", "Low Cost"]}
+        tags={["Flexible", "Attractive Returns"]}
       />
       <FundDetailsSection
         heading="Fund Objectives & Strategy"

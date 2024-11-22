@@ -23,7 +23,7 @@ const FeaturesCardData: CardProps[] = [
   {
     subtitle: "Standards",
     description:
-      "We employ the most rigorous industry practices including the CFA Asset Manager Code, which is followed by more than 1,100 firms in 30 countries worldwide.",
+      "We employ the most rigorous industry practices including the CFA Asset Manager Code, which is followed by more than 1,700 firms in 20 countries worldwide.",
     icon: Medal, // Dynamic icon
   },
 ];
