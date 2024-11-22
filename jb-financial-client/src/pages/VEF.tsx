@@ -92,7 +92,7 @@ const VEF: React.FC = () => {
       title: "Historical Unit Prices",
       fileType: "XLSX",
       fileSize: "3.9MB",
-      tags: ["Historical unit price sheet the fund."],
+      tags: ["Historical unit price sheet of the fund."],
       buttonText: "Download File",
       filePath: valueEquityFundUrl2,
       imagePath: "/images/documents/vef-hup.jpg",
@@ -121,7 +121,7 @@ const VEF: React.FC = () => {
     strategy: "Invest in undervalued large and mid-cap stocks",
     benchmark: "S&P Sri Lanka 20 Total Returns Index",
     investment: "Value investing",
-    fundSize: "LKR 17.6 Billion (Sep '24)",
+    fundSize: "LKR 2.4 Billion (Sep '24)",
     totalRatio: "2.15% (Dec 31, 2023)",
   };
   const faqData = [

@@ -40,7 +40,7 @@ const SGF: React.FC = () => {
     fetchDocumentUrl();
   }, []);
   const paragraphs = [
-    "Set up JB Financial's (JBF) wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and has independently advised institutions on setting investment policy.​",
+    "Set up JB Financial's wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and has independently advised institutions on setting investment policy.​",
   ];
   const documents = [
     {
@@ -92,7 +92,7 @@ const SGF: React.FC = () => {
       title: "Historical Unit Prices",
       fileType: "XLSX",
       fileSize: "3.9MB",
-      tags: ["Historical unit price sheet the fund."],
+      tags: ["Historical unit price sheet of the fund."],
       buttonText: "Download File",
       filePath: shortTermGiltFundUrl2,
       imagePath: "/images/documents/sgf-hup.jpg",
@@ -121,7 +121,7 @@ const SGF: React.FC = () => {
     strategy: "Invest in government securities",
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "Short-term government securities and REPOs",
-    fundSize: "LKR 2.4 Billion (Sep'24)",
+    fundSize: "LKR 2.6 Billion (Sep'24)",
     totalRatio: "0.56%",
   };
   const faqData = [

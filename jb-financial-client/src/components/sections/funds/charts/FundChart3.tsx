@@ -96,7 +96,7 @@ const FundChart3: React.FC<FundChart3Props> = ({}) => {
           text: "ⓘ Click on the legend above to isolate a data series",
           font: {
             size: 12,
-            family: "Switzer-Italic",
+            family: "Switzer-Regular",
           },
         },
         grid: {
