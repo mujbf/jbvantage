@@ -121,7 +121,7 @@ const MMF: React.FC = () => {
     strategy: "Invest in short-term corporate issues",
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "‘Investment grade’, short term instruments",
-    fundSize: "LKR 17.6 Billion (Sep'24)",
+    fundSize: "LKR 18.09 Billion (Oct '24)",
     totalRatio: "0.73% (Dec 31, 2023)",
   };
   const faqData = [
