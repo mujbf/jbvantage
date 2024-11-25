@@ -32,7 +32,7 @@ const JBFNavbar: React.FC = () => {
       </Navbar.Brand>
       <div className="flex md:order-2 items-center gap-4 relative">
         <a
-          href="https://jbs.lk/ut"
+          href="https://www.jbs.lk/ut/"
           target="_blank"
           className="hidden md:block relative group"
         >
