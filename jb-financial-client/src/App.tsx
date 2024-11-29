@@ -9,7 +9,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import { AuthProvider } from "./pages/admin/Auth";
 import "./App.css";
 
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 // SEO Component
 interface SEOProps {
@@ -71,19 +71,21 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <HelmetProvider>
-      <SEO
-        title="JB Financial - Investment and Wealth Management | Sri Lanka"
-        description="JB Financial is a licensed private investment management company in Sri Lanka since 2011, offering top-tier asset management services. With over a decade of experience, we've earned multiple awards for our Unit Trusts and adhere to industry best practices, including the CFA Institute's Asset Manager Code."
-        keywords="jb, financial, investment, wealth, management"
-      />
-      <AuthProvider>
-        <Router>
-          <AppContent />
-        </Router>
-        <Analytics />
-      </AuthProvider>
-    </HelmetProvider>
+    <>
+      <HelmetProvider>
+        <SEO
+          title="JB Financial - Investment and Wealth Management | Sri Lanka"
+          description="JB Financial is a licensed private investment management company in Sri Lanka since 2011, offering top-tier asset management services. With over a decade of experience, we've earned multiple awards for our Unit Trusts and adhere to industry best practices, including the CFA Institute's Asset Manager Code."
+          keywords="jb, financial, investment, wealth, management"
+        />
+        <AuthProvider>
+          <Router>
+            <AppContent />
+          </Router>
+        </AuthProvider>
+      </HelmetProvider>
+      <Analytics />
+    </>
   );
 };
 
