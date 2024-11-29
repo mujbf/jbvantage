@@ -9,6 +9,8 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import { AuthProvider } from "./pages/admin/Auth";
 import "./App.css";
 
+import { Analytics } from "@vercel/analytics/next";
+
 // SEO Component
 interface SEOProps {
   title: string;
@@ -79,6 +81,7 @@ const App: React.FC = () => {
         <Router>
           <AppContent />
         </Router>
+        <Analytics />
       </AuthProvider>
     </HelmetProvider>
   );

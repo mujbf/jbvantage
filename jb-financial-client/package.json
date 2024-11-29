@@ -17,6 +17,7 @@
     "@react-pdf/renderer": "^4.0.0",
     "@tinymce/tinymce-react": "^5.1.1",
     "@types/react-router-dom": "^5.3.3",
+    "@vercel/analytics": "^1.4.1",
     "axios": "^1.7.3",
     "chart.js": "^4.4.3",
     "cors": "^2.8.5",
