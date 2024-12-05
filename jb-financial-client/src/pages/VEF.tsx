@@ -121,7 +121,7 @@ const VEF: React.FC = () => {
     strategy: "Invest in undervalued large and mid-cap stocks",
     benchmark: "S&P Sri Lanka 20 Total Returns Index",
     investment: "Value investing",
-    fundSize: "LKR 2.7 Billion (Oct '24)",
+    fundSize: "LKR 2.9 Billion (Nov '24)",
     totalRatio: "2.15% (Dec 31, 2023)",
   };
   const faqData = [

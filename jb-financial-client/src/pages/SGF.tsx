@@ -121,7 +121,7 @@ const SGF: React.FC = () => {
     strategy: "Invest in government securities",
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "Short-term government securities and REPOs",
-    fundSize: "LKR 2.6 Billion (Oct '24)",
+    fundSize: "LKR 2.57 Billion (Nov '24)",
     totalRatio: "0.56% (Dec 31, 2023)",
   };
   const faqData = [
