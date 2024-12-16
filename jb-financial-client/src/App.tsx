@@ -9,10 +9,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import { AuthProvider } from "./pages/admin/Auth";
 import "./App.css";
 
-// import MetaPixel, {
-//   MetaPixelEvents,
-//   trackMetaPixelEvent,
-// } from "./components/meta/MetaPixel";
+import TagManager from "react-gtm-module";
 
 import { Analytics } from "@vercel/analytics/react";
 
@@ -75,6 +72,12 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  useEffect(() => {
+    const tagManagerArgs = {
+      gtmId: "GTM-5HNMVQD2",
+    };
+    TagManager.initialize(tagManagerArgs);
+  }, []);
   return (
     <>
       {/* <MetaPixel
