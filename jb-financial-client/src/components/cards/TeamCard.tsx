@@ -22,7 +22,7 @@ const teamCardData: TeamCardProps[] = [
   {
     name: "Murtaza Jafferjee, CFA",
     designation: "Director & Chief Strategist",
-    imageUrl: "/images/team/murtaza.png",
+    imageUrl: "/images/team/murtaza-n.png",
     description:
       "Worked in the Sri Lankan equity market since 1994. He is a former director at Nations Trust Bank PLC, Serendib Hotels PLC and the Colombo Stock Exchange and is a past President of CFA Sri Lanka. He is the current chair of Advocata, a policy think tank based in Colombo.",
   },

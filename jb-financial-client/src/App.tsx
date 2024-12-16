@@ -9,6 +9,11 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import { AuthProvider } from "./pages/admin/Auth";
 import "./App.css";
 
+// import MetaPixel, {
+//   MetaPixelEvents,
+//   trackMetaPixelEvent,
+// } from "./components/meta/MetaPixel";
+
 import { Analytics } from "@vercel/analytics/react";
 
 // SEO Component
@@ -72,6 +77,16 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <>
+      {/* <MetaPixel
+        pixelId="515197861556055"
+        advancedMatching={{
+          // Optional: advanced user matching
+          em: "user@example.com", // email
+          ph: "1234567890", // phone
+          fn: "John", // first name
+          ln: "Doe", // last name
+        }}
+      /> */}
       <HelmetProvider>
         <SEO
           title="JB Financial - Investment and Wealth Management | Sri Lanka"
