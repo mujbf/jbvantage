@@ -11,7 +11,7 @@ import "./App.css";
 
 import TagManager from "react-gtm-module";
 
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 
 // SEO Component
 interface SEOProps {
@@ -80,16 +80,6 @@ const App: React.FC = () => {
   }, []);
   return (
     <>
-      {/* <MetaPixel
-        pixelId="515197861556055"
-        advancedMatching={{
-          // Optional: advanced user matching
-          em: "user@example.com", // email
-          ph: "1234567890", // phone
-          fn: "John", // first name
-          ln: "Doe", // last name
-        }}
-      /> */}
       <HelmetProvider>
         <SEO
           title="JB Financial - Investment and Wealth Management | Sri Lanka"
@@ -102,7 +92,7 @@ const App: React.FC = () => {
           </Router>
         </AuthProvider>
       </HelmetProvider>
-      <Analytics />
+      {/* <Analytics /> */}
     </>
   );
 };
