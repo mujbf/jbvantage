@@ -8,10 +8,22 @@ const ContactFormN: React.FC<ContactFormNProps> = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    mobile: "",
     message: "",
+  });
+  const [formErrors, setFormErrors] = useState({
+    mobile: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+
+  const validateMobileNumber = (number: string) => {
+    // Basic mobile number validation - allows international format
+    // Accepts formats like: +1234567890, 1234567890, +12 345 6789, etc.
+    const mobileRegex =
+      /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,3}[-\s.]?[0-9]{4,10}$/;
+    return mobileRegex.test(number);
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,10 +33,37 @@ const ContactFormN: React.FC<ContactFormNProps> = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Validate mobile number on change
+    if (name === "mobile") {
+      if (!value) {
+        setFormErrors((prev) => ({
+          ...prev,
+          mobile: "Mobile number is required",
+        }));
+      } else if (!validateMobileNumber(value)) {
+        setFormErrors((prev) => ({
+          ...prev,
+          mobile: "Please enter a valid mobile number",
+        }));
+      } else {
+        setFormErrors((prev) => ({ ...prev, mobile: "" }));
+      }
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Validate mobile number before submission
+    if (!validateMobileNumber(formData.mobile)) {
+      setFormErrors((prev) => ({
+        ...prev,
+        mobile: "Please enter a valid mobile number",
+      }));
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -39,6 +78,7 @@ const ContactFormN: React.FC<ContactFormNProps> = () => {
         setFormData({
           name: "",
           email: "",
+          mobile: "",
           message: "",
         });
       } else {
@@ -98,6 +138,28 @@ const ContactFormN: React.FC<ContactFormNProps> = () => {
       </div>
 
       <div className="flex flex-col gap-2">
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleInputChange}
+          placeholder="Your Mobile Number"
+          className={`px-6 py-4 border ${
+            formErrors.mobile
+              ? "border-red-500 focus:border-red-500"
+              : "border-neutral-lighter focus:border-primary-800"
+          } rounded-lg switzer-r text-neutral-mid`}
+          required
+        />
+        {formErrors.mobile && (
+          <span className="switzer-r text-red-500 text-sm mt-1">
+            {formErrors.mobile}
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-2">
         <textarea
           id="message"
           name="message"
@@ -112,9 +174,9 @@ const ContactFormN: React.FC<ContactFormNProps> = () => {
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !!formErrors.mobile}
         className={`primary-button ${
-          isSubmitting
+          isSubmitting || !!formErrors.mobile
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-primary-500 hover:bg-primary-600"
         }`}

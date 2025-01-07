@@ -7,7 +7,7 @@ interface ContactProps {}
 const Contact: React.FC<ContactProps> = ({}) => {
   return (
     <>
-      <section className="w-screen h-fit md:h-screen px-4 py-8 md:p-20 2xl:px-40 2xl:py-20 flex flex-col md:flex-row gap-4 md:gap-16 items-center">
+      <section className="w-screen h-fit md:h-auto px-4 py-8 md:p-20 2xl:px-40 2xl:py-20 flex flex-col md:flex-row gap-4 md:gap-16 items-center">
         <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-12 ">
           <h1 className="titleText text-primary-900 mt-[72px] md:mt-0">
             Contact Us
