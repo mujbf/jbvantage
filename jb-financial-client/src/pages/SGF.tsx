@@ -71,10 +71,10 @@ const SGF: React.FC = () => {
       imagePath: "/images/documents/pf.jpg",
     },
     {
-      title: "KYC Compliance",
+      title: "KYC Form",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["KYC Compliance for JB Vantage Unit Holders"],
+      tags: ["KYC Form for JB Vantage Unit Holders"],
       buttonText: "View Document",
       filePath: "/docs/kyc_compliance.pdf",
       imagePath: "/images/documents/kyc.jpg",
