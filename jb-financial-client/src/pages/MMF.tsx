@@ -53,6 +53,15 @@ const MMF: React.FC = () => {
       imagePath: "/images/documents/mmf-em.jpg",
     },
     {
+      title: "Trust Deed",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Trust Deed of the fund."],
+      buttonText: "View Document",
+      filePath: "/docs/mmf/trust_deed.pdf",
+      imagePath: "/images/documents/td.jpg",
+    },
+    {
       title: "Application Form",
       fileType: "PDF",
       fileSize: "3.9MB",

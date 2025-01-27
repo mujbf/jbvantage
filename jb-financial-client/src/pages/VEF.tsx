@@ -53,6 +53,15 @@ const VEF: React.FC = () => {
       imagePath: "/images/documents/vef-em.jpg",
     },
     {
+      title: "Trust Deed",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Trust Deed of the fund."],
+      buttonText: "View Document",
+      filePath: "/docs/vef/trust_deed.pdf",
+      imagePath: "/images/documents/td.jpg",
+    },
+    {
       title: "Application Form",
       fileType: "PDF",
       fileSize: "3.9MB",

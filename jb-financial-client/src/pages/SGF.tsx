@@ -53,6 +53,15 @@ const SGF: React.FC = () => {
       imagePath: "/images/documents/sgf-em.jpg",
     },
     {
+      title: "Trust Deed",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Trust Deed of the fund."],
+      buttonText: "View Document",
+      filePath: "/docs/sgf/trust_deed.pdf",
+      imagePath: "/images/documents/td.jpg",
+    },
+    {
       title: "Application Form",
       fileType: "PDF",
       fileSize: "3.9MB",
