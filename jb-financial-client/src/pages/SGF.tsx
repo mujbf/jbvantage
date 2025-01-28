@@ -68,7 +68,7 @@ const SGF: React.FC = () => {
       tags: ["So we can get to know you."],
       buttonText: "View Document",
       filePath: "/docs/sgf/application_form.pdf",
-      imagePath: "/images/documents/af.jpg",
+      imagePath: "/images/documents/pf.jpg",
     },
     {
       title: "Purchase Form",
@@ -77,7 +77,7 @@ const SGF: React.FC = () => {
       tags: ["Purchase units of the fund."],
       buttonText: "View Document",
       filePath: "/docs/sgf/purchase_form.pdf",
-      imagePath: "/images/documents/pf.jpg",
+      imagePath: "/images/documents/af.jpg",
     },
     {
       title: "KYC Form",
