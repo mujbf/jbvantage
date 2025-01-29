@@ -26,6 +26,24 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
     sgf12mValue: "",
     sgf12mDate: "",
     sgfBenchValue: "",
+    vefReturnYear1: "",
+    vefReturnYear2: "",
+    vefReturnYear3: "",
+    vefReturnValue1: "",
+    vefReturnValue2: "",
+    vefReturnValue3: "",
+    mmfReturnYear1: "",
+    mmfReturnYear2: "",
+    mmfReturnYear3: "",
+    mmfReturnValue1: "",
+    mmfReturnValue2: "",
+    mmfReturnValue3: "",
+    sgfReturnYear1: "",
+    sgfReturnYear2: "",
+    sgfReturnYear3: "",
+    sgfReturnValue1: "",
+    sgfReturnValue2: "",
+    sgfReturnValue3: "",
   });
 
   // Fetch data from the API
@@ -111,6 +129,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
           </div>
+
           <div className="flex items-center gap-4">
             <p className="regularText text-neutral-mid">Benchmark</p>
             <input
@@ -121,6 +140,64 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               type="text"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <p className="regularText text-neutral-mid">Return Years</p>
+            <div className="flex gap-4">
+              <input
+                name="vefReturnYear1"
+                value={fundData.vefReturnYear1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="vefReturnValue1"
+                value={fundData.vefReturnValue1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="vefReturnYear2"
+                value={fundData.vefReturnYear2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="vefReturnValue2"
+                value={fundData.vefReturnValue2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="vefReturnYear3"
+                value={fundData.vefReturnYear3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="vefReturnValue3"
+                value={fundData.vefReturnValue3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
           </div>
         </div>
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
@@ -174,6 +251,63 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
           </div>
+          <div className="flex flex-col gap-4">
+            <p className="regularText text-neutral-mid">Return Years</p>
+            <div className="flex gap-4">
+              <input
+                name="mmfReturnYear1"
+                value={fundData.mmfReturnYear1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="mmfReturnValue1"
+                value={fundData.mmfReturnValue1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="mmfReturnYear2"
+                value={fundData.mmfReturnYear2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="mmfReturnValue2"
+                value={fundData.mmfReturnValue2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="mmfReturnYear3"
+                value={fundData.mmfReturnYear3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="mmfReturnValue3"
+                value={fundData.mmfReturnValue3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+          </div>
         </div>
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Short Term Gilt Fund</p>
@@ -225,6 +359,63 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               type="text"
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="regularText text-neutral-mid">Return Years</p>
+            <div className="flex gap-4">
+              <input
+                name="sgfReturnYear1"
+                value={fundData.sgfReturnYear1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="sgfReturnValue1"
+                value={fundData.sgfReturnValue1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="sgfReturnYear2"
+                value={fundData.sgfReturnYear2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="sgfReturnValue2"
+                value={fundData.sgfReturnValue2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="sgfReturnYear3"
+                value={fundData.sgfReturnYear3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+              <input
+                name="sgfReturnValue3"
+                value={fundData.sgfReturnValue3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+              />
+            </div>
           </div>
         </div>
       </div>
