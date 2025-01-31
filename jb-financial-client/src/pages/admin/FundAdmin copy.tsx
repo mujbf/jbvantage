@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button, Label, TextInput, Table, Pagination } from "flowbite-react";
+import { Button, Label, TextInput, Table } from "flowbite-react";
 import { SERVER_URL } from "../../Constants";
 import PerformanceTable from "./PerformanceTable.tsx";
 import FundTableAdmin from "../../components/sections/admin/FundTableAdmin.tsx";
@@ -35,24 +35,7 @@ const FundCard: React.FC<{
     nav: "",
   });
 
-  const [currentPage, setCurrentPage] = useState(1);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  // Sort data by date in descending order (newest first)
-  const sortedData = [...fundData].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
-  // Calculate pagination
-  const itemsPerPage = 5;
-  const totalPages = Math.ceil(sortedData.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
-
-  const onPageChange = (page: number) => {
-    setCurrentPage(page);
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -116,7 +99,7 @@ const FundCard: React.FC<{
                 <Table.HeadCell>NAV</Table.HeadCell>
               </Table.Head>
               <Table.Body className="divide-y">
-                {currentItems.map((data, index) => (
+                {fundData.map((data, index) => (
                   <Table.Row
                     key={index}
                     className={`${index === 0 ? "bg-neutral-lightest" : ""}`}
@@ -142,18 +125,6 @@ const FundCard: React.FC<{
                 ))}
               </Table.Body>
             </Table>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center mt-4 switzer-r text-sm">
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={onPageChange}
-                  showIcons
-                />
-              </div>
-            )}
           </div>
         </div>
       </div>

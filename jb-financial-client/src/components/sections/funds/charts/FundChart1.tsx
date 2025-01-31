@@ -244,7 +244,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
           <h2 className="subtitleText text-primary-900" id="ytd-value">
             {ytdReturn !== null ? `${ytdReturn}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md">
             YTD Return :{" "}
             <span className="text-neutral-light">
               as at {ytdDate !== null ? `${ytdDate}` : "Loading..."}
@@ -255,7 +255,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
           <h2 className="subtitleText text-primary-900">
             {twelveMonthReturn !== null ? `${twelveMonthReturn}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md">
             12M Return :{" "}
             <span className="text-neutral-light">
               as at{" "}
@@ -267,7 +267,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
           <h2 className="subtitleText text-primary-900">
             {benchmarkValue !== null ? `${benchmarkValue}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md">
             Benchmark 12M Return
           </p>
         </div>
