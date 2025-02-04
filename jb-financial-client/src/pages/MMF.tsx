@@ -194,12 +194,13 @@ const MMF: React.FC = () => {
         imageUrl="/images/funds/money-market.jpg"
       />
       <FundStatsSection
+        fundType="moneyMarket"
         objective={fundStats.objective}
         strategy={fundStats.strategy}
         benchmark={fundStats.benchmark}
         investment={fundStats.investment}
         investmentTooltip="Rated BBB - and above"
-        fundSize={fundStats.fundSize}
+        // fundSize={fundStats.fundSize}
         totalRatio={fundStats.totalRatio}
       />
       <FundChart2

@@ -192,11 +192,12 @@ const VEF: React.FC = () => {
         imageUrl="/images/funds/value-equity.jpg"
       />
       <FundStatsSection
+        fundType="valueEquity"
         objective={fundStats.objective}
         strategy={fundStats.strategy}
         benchmark={fundStats.benchmark}
         investment={fundStats.investment}
-        fundSize={fundStats.fundSize}
+        // fundSize={fundStats.fundSize}
         totalRatio={fundStats.totalRatio}
       />
       <FundChart1

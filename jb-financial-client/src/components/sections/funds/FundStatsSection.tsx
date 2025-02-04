@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface FundStatsSectionProps {
   objective: string;
@@ -6,7 +6,7 @@ interface FundStatsSectionProps {
   benchmark: string;
   investment: string;
   investmentTooltip?: string;
-  fundSize: string;
+  fundType: "valueEquity" | "moneyMarket" | "shortTermGilt";
   totalRatio: string;
 }
 
@@ -39,9 +39,48 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
   benchmark,
   investment,
   investmentTooltip,
-  fundSize,
+  fundType,
   totalRatio,
 }) => {
+  const [fundSize, setFundSize] = useState<string>("");
+
+  useEffect(() => {
+    const fetchFundSizes = async () => {
+      try {
+        // Check if data is available in local storage first
+        const localData = localStorage.getItem("fundSizes");
+        if (localData) {
+          const parsedData = JSON.parse(localData);
+          setFundSize(parsedData[getFundSizeKey(fundType)]);
+          return;
+        }
+
+        // If not found in local storage, fetch from the JSON file
+        const response = await fetch("/fundSizes.json");
+        const data = await response.json();
+        setFundSize(data[getFundSizeKey(fundType)]);
+      } catch (error) {
+        console.error("Error fetching fund sizes:", error);
+        setFundSize("N/A");
+      }
+    };
+
+    fetchFundSizes();
+  }, [fundType]);
+
+  const getFundSizeKey = (fundType: string) => {
+    switch (fundType) {
+      case "valueEquity":
+        return "vefFundSize";
+      case "moneyMarket":
+        return "mmfFundSize";
+      case "shortTermGilt":
+        return "sgfFundSize";
+      default:
+        return "";
+    }
+  };
+
   const InvestmentContent = () => {
     if (investmentTooltip) {
       return (

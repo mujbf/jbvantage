@@ -1,11 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Button, Label, TextInput, Table } from "flowbite-react";
-import { SERVER_URL } from "../../Constants";
-import PerformanceTable from "./PerformanceTable.tsx";
-import FundTableAdmin from "../../components/sections/admin/FundTableAdmin.tsx";
-import FundDocumentAdmin from "../../components/sections/admin/FundDocumentAdmin.tsx";
-import FundYtdAdmin from "../../components/sections/admin/FundYtdAdmin.tsx";
+import React, { useState } from "react";
+import { Button, Label, TextInput, Table, Pagination } from "flowbite-react";
 
 // FundCard Component
 const FundCard: React.FC<{
@@ -35,7 +29,24 @@ const FundCard: React.FC<{
     nav: "",
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  // Sort data by date in descending order (newest first)
+  const sortedData = [...fundData].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  // Calculate pagination
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -99,7 +110,7 @@ const FundCard: React.FC<{
                 <Table.HeadCell>NAV</Table.HeadCell>
               </Table.Head>
               <Table.Body className="divide-y">
-                {fundData.map((data, index) => (
+                {currentItems.map((data, index) => (
                   <Table.Row
                     key={index}
                     className={`${index === 0 ? "bg-neutral-lightest" : ""}`}
@@ -125,12 +136,24 @@ const FundCard: React.FC<{
                 ))}
               </Table.Body>
             </Table>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-4 switzer-r text-sm">
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={onPageChange}
+                  showIcons
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
 
+      {/* Rest of the form remains unchanged */}
       <div className="p-4 md:p-8 flex flex-col gap-4">
-        {/* Date Input */}
         <div className="flex-grow">
           <div className="mb-2 block">
             <Label htmlFor="date" value="Select Date" className="switzer-md" />
@@ -150,7 +173,6 @@ const FundCard: React.FC<{
           )}
         </div>
 
-        {/* Buy Price 1 */}
         <div className="flex-grow">
           <div className="mb-2 block">
             <Label
@@ -173,7 +195,6 @@ const FundCard: React.FC<{
           )}
         </div>
 
-        {/* Conditional Buy Price 2 */}
         {buyPrice2 && (
           <div className="flex-grow">
             <div className="mb-2 block">
@@ -200,7 +221,6 @@ const FundCard: React.FC<{
           </div>
         )}
 
-        {/* Sell Price */}
         <div className="flex-grow">
           <div className="mb-2 block">
             <Label
@@ -223,7 +243,6 @@ const FundCard: React.FC<{
           )}
         </div>
 
-        {/* Net Asset Value */}
         <div className="flex-grow">
           <div className="mb-2 block">
             <Label
@@ -246,7 +265,6 @@ const FundCard: React.FC<{
           )}
         </div>
 
-        {/* Submit Button */}
         <Button className="primary-button-2" onClick={handleSubmit}>
           Submit
         </Button>
@@ -255,215 +273,4 @@ const FundCard: React.FC<{
   );
 };
 
-interface FundData {
-  date: string;
-  JBVEF?: number;
-  SPSL20TRI?: number;
-  ASTRI?: number;
-  JBMMF?: number;
-  NDBIB?: number;
-  AWFDR?: number;
-  JBGILT?: number;
-  T_BILL?: number;
-}
-
-// const headers = [
-//   "Fund Type",
-//   "1 Month",
-//   "3 Months",
-//   "6 Months",
-//   "YTD",
-//   "1 Year",
-//   "SI*",
-//   "TER**",
-// ];
-// const rows = [
-//   [
-//     "JBVEF",
-//     "15.20%",
-//     "16.05%",
-//     "17.75%",
-//     "15.20%",
-//     "23.52%",
-//     "12.52%",
-//     "0.61%",
-//   ],
-//   [
-//     "JBMMF",
-//     "15.20%",
-//     "16.05%",
-//     "17.75%",
-//     "15.20%",
-//     "23.52%",
-//     "12.52%",
-//     "0.61%",
-//   ],
-//   [
-//     "JBGILT",
-//     "15.20%",
-//     "16.05%",
-//     "17.75%",
-//     "15.20%",
-//     "23.52%",
-//     "12.52%",
-//     "0.61%",
-//   ],
-// ];
-
-// Main FundAdmin Component
-const FundAdmin: React.FC = () => {
-  type ChartType = "value-eq" | "short-term" | "money-market";
-
-  const [valueEquityFundData, setValueEquityFundData] = useState([]);
-  const [moneyMarketFundData, setMoneyMarketFundData] = useState([]);
-  const [shortTermGiltFundData, setShortTermGiltFundData] = useState([]);
-  const [valueEquityFundPerformanceData, setValueEquityFundPerformanceData] =
-    useState<FundData[]>([]);
-  const [moneyMarketFundPerformanceData, setMoneyMarketFundPerformanceData] =
-    useState<FundData[]>([]);
-  const [
-    shortTermGiltFundPerformanceData,
-    setShortTermGiltFundPerformanceData,
-  ] = useState<FundData[]>([]);
-  const chartTypes: { [key: string]: ChartType } = {
-    "Value Equity Fund": "value-eq",
-    "Money Market Fund": "money-market",
-    "Short Term Gilt Fund": "short-term",
-  };
-
-  useEffect(() => {
-    // Fetch data on component mount
-    const fetchData = async () => {
-      try {
-        const valueEquityResponse = await axios.get(
-          `${SERVER_URL}/funds/Value Equity Fund`
-        );
-        setValueEquityFundData(valueEquityResponse.data);
-
-        const moneyMarketResponse = await axios.get(
-          `${SERVER_URL}/funds/Money Market Fund`
-        );
-        setMoneyMarketFundData(moneyMarketResponse.data);
-
-        const shortTermGiltResponse = await axios.get(
-          `${SERVER_URL}/funds/Short Term Gilt Fund`
-        );
-        setShortTermGiltFundData(shortTermGiltResponse.data);
-      } catch (error) {
-        console.error("Error fetching data", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleSubmit = async (data: any, fundType: string) => {
-    try {
-      await axios.post(`${SERVER_URL}/funds`, {
-        ...data,
-        type: fundType,
-      });
-      alert("Data updated successfully!");
-
-      // Re-fetch data to update the UI
-      const fetchData = async () => {
-        const valueEquityResponse = await axios.get(
-          `${SERVER_URL}/funds/Value Equity Fund`
-        );
-        setValueEquityFundData(valueEquityResponse.data);
-
-        const moneyMarketResponse = await axios.get(
-          `${SERVER_URL}/funds/Money Market Fund`
-        );
-        setMoneyMarketFundData(moneyMarketResponse.data);
-
-        const shortTermGiltResponse = await axios.get(
-          `${SERVER_URL}/funds/Short Term Gilt Fund`
-        );
-        setShortTermGiltFundData(shortTermGiltResponse.data);
-      };
-
-      switch (fundType) {
-        case "Value Equity Fund":
-          setValueEquityFundPerformanceData([
-            ...valueEquityFundPerformanceData,
-            data,
-          ]);
-          break;
-        case "Money Market Fund":
-          setMoneyMarketFundPerformanceData([
-            ...moneyMarketFundPerformanceData,
-            data,
-          ]);
-          break;
-        case "Short Term Gilt Fund":
-          setShortTermGiltFundPerformanceData([
-            ...shortTermGiltFundPerformanceData,
-            data,
-          ]);
-          break;
-        default:
-          break;
-      }
-
-      fetchData();
-    } catch (error) {
-      console.error("Error updating data", error);
-    }
-  };
-
-  return (
-    <div className="bg-white px-4 py-8 md:p-20 2xl:px-40 2xl:py-20 flex flex-col gap-4 md:gap-20 mt-20">
-      <div className="flex flex-col gap-4">
-        <h2 className="subtitleText text-neutral-mid">Fund Prices</h2>
-        <p className="bodyText text-neutral-mid">Update fund prices daily.</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
-        <FundCard
-          title="Fund Data Table"
-          subtitle="Value Equity Fund"
-          buyPrice2
-          fundData={valueEquityFundData}
-          onSubmit={(data) => handleSubmit(data, "Value Equity Fund")}
-        />
-        <FundCard
-          title="Fund Data Table"
-          subtitle="Money Market Fund"
-          fundData={moneyMarketFundData}
-          onSubmit={(data) => handleSubmit(data, "Money Market Fund")}
-        />
-        <FundCard
-          title="Fund Data Table"
-          subtitle="Short Term Gilt Fund"
-          fundData={shortTermGiltFundData}
-          onSubmit={(data) => handleSubmit(data, "Short Term Gilt Fund")}
-        />
-      </div>
-      <div className="flex flex-col gap-4">
-        <h2 className="subtitleText text-neutral-mid">Fund Charts</h2>
-        <p className="bodyText text-neutral-mid">
-          Update values for fund charts monthly.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
-        <PerformanceTable
-          chartType={chartTypes["Value Equity Fund"]}
-          cardTitle="Value Equity Fund"
-        />
-        <PerformanceTable
-          chartType={chartTypes["Money Market Fund"]}
-          cardTitle="Money Market Fund"
-        />
-        <PerformanceTable
-          chartType={chartTypes["Short Term Gilt Fund"]}
-          cardTitle="Short Term Gilt Fund"
-        />
-      </div>
-      <FundTableAdmin />
-      <FundDocumentAdmin />
-      <FundYtdAdmin />
-    </div>
-  );
-};
-
-export default FundAdmin;
+export default FundCard;

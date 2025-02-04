@@ -194,11 +194,12 @@ const SGF: React.FC = () => {
         imageUrl="/images/funds/short-term-gilt.jpg"
       />
       <FundStatsSection
+        fundType="shortTermGilt"
         objective={fundStats.objective}
         strategy={fundStats.strategy}
         benchmark={fundStats.benchmark}
         investment={fundStats.investment}
-        fundSize={fundStats.fundSize}
+        // fundSize={fundStats.fundSize}
         totalRatio={fundStats.totalRatio}
       />
       <FundChart3

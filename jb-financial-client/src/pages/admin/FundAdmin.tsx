@@ -6,6 +6,7 @@ import PerformanceTable from "./PerformanceTable.tsx";
 import FundTableAdmin from "../../components/sections/admin/FundTableAdmin.tsx";
 import FundDocumentAdmin from "../../components/sections/admin/FundDocumentAdmin.tsx";
 import FundYtdAdmin from "../../components/sections/admin/FundYtdAdmin.tsx";
+import FundSizesAdmin from "../../components/sections/admin/FundSizesAdmin.tsx";
 
 // FundCard Component
 const FundCard: React.FC<{
@@ -491,6 +492,7 @@ const FundAdmin: React.FC = () => {
       <FundTableAdmin />
       <FundDocumentAdmin />
       <FundYtdAdmin />
+      <FundSizesAdmin />
     </div>
   );
 };
