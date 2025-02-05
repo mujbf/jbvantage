@@ -245,33 +245,36 @@ const FundChart3: React.FC<FundChart3Props> = ({}) => {
         </div>
       </div>
       <div className="w-full flex flex-col md:flex-row gap-4 md:gap-16 justify-center">
-        <div className="w-full">
-          <h2 className="subtitleText text-primary-900" id="ytd-value">
+        <div className="w-full flex flex-col items-center gap-3">
+          <h2
+            className="zodiak-r text-center text-6xl text-primary-900"
+            id="ytd-value"
+          >
             {ytdValue !== null ? `${ytdValue}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md text-center">
             YTD Return :{" "}
             <span className="text-neutral-light">
               as at {ytdDate !== null ? `${ytdDate}` : "Loading..."}
             </span>
           </p>
         </div>
-        <div className="w-full">
-          <h2 className="subtitleText text-primary-900">
+        <div className="w-full flex flex-col items-center gap-3">
+          <h2 className="zodiak-r text-center text-6xl text-primary-900">
             {twelveValue !== null ? `${twelveValue}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md text-center">
             12M Return :{" "}
             <span className="text-neutral-light">
               as at {twelveDate !== null ? `${twelveDate}` : "Loading..."}
             </span>
           </p>
         </div>
-        <div className="w-full">
-          <h2 className="subtitleText text-primary-900">
+        <div className="w-full flex flex-col items-center gap-3">
+          <h2 className="zodiak-r text-center text-6xl text-primary-900">
             {benchmarkValue !== null ? `${benchmarkValue}` : "Loading..."}
           </h2>
-          <p className="text-base md:text-2xl text-neutral-dark switzer-md w-[80%]">
+          <p className="text-base md:text-2xl text-neutral-dark switzer-md text-center">
             Benchmark 12M Return
           </p>
         </div>
