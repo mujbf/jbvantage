@@ -18,6 +18,13 @@ const FundSizesAdmin: React.FC = () => {
     type: "success" | "error";
   } | null>(null);
 
+  // Mapping of field names to their full display names
+  const fundNameMapping = {
+    vefFundSize: "Value Equity Fund Size",
+    mmfFundSize: "Money Market Fund Size",
+    sgfFundSize: "Short Term Gilt Fund Size",
+  };
+
   // Fetch fund sizes from the JSON file
   useEffect(() => {
     const fetchFundSizes = async () => {
@@ -66,8 +73,13 @@ const FundSizesAdmin: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">Update Fund Sizes</h2>
+    <div className="flex flex-col gap-6 md:gap-8 lg:gap-16">
+      <div className="flex flex-col gap-4">
+        <h2 className="subtitleText text-neutral-mid">Fund Size</h2>
+        <p className="bodyText text-neutral-mid">
+          Update the recent fund size of all 3 funds.
+        </p>
+      </div>
 
       {message && (
         <div
@@ -82,26 +94,24 @@ const FundSizesAdmin: React.FC = () => {
       )}
 
       <form onSubmit={handleSubmit}>
-        {["vefFundSize", "mmfFundSize", "sgfFundSize"].map((field, index) => (
+        {Object.keys(fundNameMapping).map((field, index) => (
           <div className="mb-4" key={index}>
-            <label className="block text-gray-700 font-bold mb-2">
-              {field.replace("FundSize", " Fund Size")}
+            <label className="block switzer-sb mb-2 text-neutral-mid">
+              {fundNameMapping[field as keyof typeof fundNameMapping]}
             </label>
             <input
               type="text"
               name={field}
               value={fundSizes[field as keyof FundSizesFormData]}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               required
             />
           </div>
         ))}
+        <br />
 
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
-        >
+        <button type="submit" className="primary-button">
           Update Fund Sizes
         </button>
       </form>
