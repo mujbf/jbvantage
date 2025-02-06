@@ -195,7 +195,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 lg:gap-8 w-full">
         <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 gap-4">
           <div className="flex flex-col px-4 pt-6">
-            <span className="switzer-sb text-lg md:text-2xl neutralText text-center">
+            <span className="switzer-sb text-md md:text-xl neutralText text-center">
               {year1 !== null ? `${year1}` : "Loading..."}
             </span>
           </div>
@@ -208,7 +208,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
 
         <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 gap-4">
           <div className="flex flex-col px-4 pt-6">
-            <span className="switzer-sb text-lg md:text-2xl neutralText text-center">
+            <span className="switzer-sb text-md md:text-xl neutralText text-center">
               {year2 !== null ? `${year2}` : "Loading..."}
             </span>
           </div>
@@ -221,7 +221,7 @@ const FundChart1: React.FC<FundChart1Props> = ({}) => {
 
         <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 gap-4">
           <div className="flex flex-col px-4 pt-6">
-            <span className="switzer-sb text-lg md:text-2xl neutralText text-center">
+            <span className="switzer-sb text-md md:text-xl neutralText text-center">
               {year3 !== null ? `${year3}` : "Loading..."}
             </span>
           </div>

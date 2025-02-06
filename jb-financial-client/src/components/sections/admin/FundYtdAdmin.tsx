@@ -151,7 +151,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="vefReturnValue1"
@@ -159,7 +159,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -169,7 +169,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="vefReturnValue2"
@@ -177,7 +177,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -187,7 +187,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="vefReturnValue3"
@@ -195,7 +195,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
           </div>
@@ -260,7 +260,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="mmfReturnValue1"
@@ -268,7 +268,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -278,7 +278,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="mmfReturnValue2"
@@ -286,7 +286,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -296,7 +296,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="mmfReturnValue3"
@@ -304,7 +304,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
           </div>
@@ -369,7 +369,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="sgfReturnValue1"
@@ -377,7 +377,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -387,7 +387,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="sgfReturnValue2"
@@ -395,7 +395,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
             <div className="flex gap-4">
@@ -405,7 +405,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
               />
               <input
                 name="sgfReturnValue3"
@@ -413,7 +413,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
                 onChange={handleChange}
                 placeholder=""
                 type="text"
-                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
               />
             </div>
           </div>
