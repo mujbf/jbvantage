@@ -149,7 +149,7 @@ const SGF: React.FC = () => {
     benchmark: "NDBIB-CRISIL 91 Day T-Bill index",
     investment: "Short-term government securities and REPOs",
     fundSize: "LKR 2.58 Billion (Dec '24)",
-    totalRatio: "0.56% (Dec 31, 2023)",
+    totalRatio: "0.63% (Dec 31, 2024)",
   };
   const faqData = [
     {

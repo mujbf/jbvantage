@@ -149,7 +149,7 @@ const VEF: React.FC = () => {
     benchmark: "S&P Sri Lanka 20 Total Returns Index",
     investment: "Value investing",
     fundSize: "LKR 3.9 Billion (Dec '24)",
-    totalRatio: "2.15% (Dec 31, 2023)",
+    totalRatio: "2.76% (Dec 31, 2024)",
   };
   const faqData = [
     {
