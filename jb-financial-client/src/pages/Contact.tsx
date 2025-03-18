@@ -37,8 +37,8 @@ const Contact: React.FC<ContactProps> = ({}) => {
             <div className="flex gap-4">
               <img src="/icons/phone-primary.svg" alt="Phone icon" />
               <p className="bodyText text-neutral-mid">
-                <a href="tel:+94112490900" className="hover:text-neutral-dark">
-                  +94 11 249 0900
+                <a href="tel:+94702111999" className="hover:text-neutral-dark">
+                  +94 70 211 1999
                 </a>{" "}
                 <br />
                 <span>(Working Hours: Mon - Fri from 9AM - 5PM)</span>

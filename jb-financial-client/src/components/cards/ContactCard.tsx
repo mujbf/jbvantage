@@ -15,7 +15,7 @@ const contactCardData: ContactCardProps[] = [
     imageUrl: "/icons/mail.svg",
   },
   {
-    line1: "+94 11 249 0900",
+    line1: "+94 70 211 1999",
     line2: "(Working Hours: Mon - Fri from 9AM -5PM)",
     line3: "",
     imageUrl: "/icons/phone.svg",

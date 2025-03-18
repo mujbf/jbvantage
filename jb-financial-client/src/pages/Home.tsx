@@ -4,6 +4,7 @@ import ColumnsSection from "../components/sections/ColumnsSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
+import BlogCarouselSection from "../components/sections/BlogCarouselSection";
 
 const TESTIMONIALS_JSON_PATH = "/site-data/testimonials.json";
 
@@ -129,6 +130,15 @@ const Home: React.FC = () => {
         buttonType="primary"
         cardType="fundPrice"
         alignText="center"
+      />
+      <BlogCarouselSection
+        subtitleText="The Vantage Point"
+        bodyText="Check out our latest insights and articles"
+        buttonText="View All Posts"
+        buttonType="primary"
+        buttonLink="/blog"
+        blogCategory="" // Optional - filter by category
+        maxBlogCards={6} // Optional - default is 6
       />
       <TestimonialSection testimonials={testimonials} />
       <ColumnsSection

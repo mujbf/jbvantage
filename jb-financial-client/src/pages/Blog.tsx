@@ -10,14 +10,7 @@ const Blog: React.FC = () => {
         description="Our thoughts on the investing environment, economy, and more."
         tags={["All", "Stocks", "Bonds", "Retirement Planning", "News"]}
       />
-      <BlogFeaturedSection
-        imageSrc="/images/blog/sample-blog-1.jpg"
-        category="Finance"
-        readingTime="3 Min"
-        title="The Power of Compound Interest"
-        description="Discover how compound interest can help grow your wealth over time."
-        buttonText="Read More"
-      />
+      <BlogFeaturedSection />
       <ColumnsSection
         subtitleText=""
         bodyText=""
