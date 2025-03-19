@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BlogCard } from "../cards/BlogCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SERVER_URL } from "../../Constants";
 
 interface BlogCarouselSectionProps {
   subtitleText: string;
@@ -12,8 +13,6 @@ interface BlogCarouselSectionProps {
   blogCategory?: string;
   maxBlogCards?: number;
 }
-
-const SERVER_URL = "http://localhost:5000"; // Update this with the correct server URL
 
 const BlogCarouselSection: React.FC<BlogCarouselSectionProps> = ({
   subtitleText,
