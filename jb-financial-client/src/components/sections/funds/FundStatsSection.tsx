@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { SERVER_URL } from "../../../Constants";
 
 interface FundStatsSectionProps {
   objective: string;
@@ -43,32 +44,56 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
   totalRatio,
 }) => {
   const [fundSize, setFundSize] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchFundSizes = async () => {
+    const fetchFundSize = async () => {
+      setLoading(true);
       try {
-        // Check if data is available in local storage first
-        const localData = localStorage.getItem("fundSizes");
-        if (localData) {
-          const parsedData = JSON.parse(localData);
-          setFundSize(parsedData[getFundSizeKey(fundType)]);
-          return;
+        // Get the appropriate API endpoint based on fund type
+        const endpoint = getEndpointForFundType(fundType);
+
+        const response = await fetch(endpoint);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch fund size from ${endpoint}`);
         }
 
-        // If not found in local storage, fetch from the JSON file
-        const response = await fetch("/fundSizes.json");
         const data = await response.json();
-        setFundSize(data[getFundSizeKey(fundType)]);
+
+        // Extract the fund size value based on the fund type
+        const sizeKey = getFundSizeKey(fundType);
+        const sizeValue = data[sizeKey] || "N/A";
+
+        // Format the fund size with ₹ symbol if it has a value
+        setFundSize(sizeValue ? `${sizeValue}` : "N/A");
       } catch (error) {
-        console.error("Error fetching fund sizes:", error);
+        console.error("Error fetching fund size:", error);
         setFundSize("N/A");
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchFundSizes();
+    fetchFundSize();
   }, [fundType]);
 
-  const getFundSizeKey = (fundType: string) => {
+  // Get the appropriate API endpoint based on fund type
+  const getEndpointForFundType = (fundType: string): string => {
+    switch (fundType) {
+      case "valueEquity":
+        return `${SERVER_URL}/api/fund-sizes/vef`;
+      case "moneyMarket":
+        return `${SERVER_URL}/api/fund-sizes/mmf`;
+      case "shortTermGilt":
+        return `${SERVER_URL}/api/fund-sizes/sgf`;
+      default:
+        return `${SERVER_URL}/api/fund-sizes`; // Fallback to the main endpoint
+    }
+  };
+
+  // Get the key for accessing the fund size in the API response
+  const getFundSizeKey = (fundType: string): string => {
     switch (fundType) {
       case "valueEquity":
         return "vefFundSize";
@@ -139,7 +164,11 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
             Fund Size
           </p>
           <p className="switzer-sb text-neutral-dark text-sm md:text-2xl px-4 py-2 text-right">
-            {fundSize}
+            {loading ? (
+              <span className="text-neutral-light">Loading...</span>
+            ) : (
+              fundSize
+            )}
           </p>
         </div>
         <div className="flex justify-between border-y border-neutral-light">
