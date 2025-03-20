@@ -201,9 +201,6 @@ const FundSizesAdmin: React.FC = () => {
                   {fundNameMapping[field]}
                 </label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-mid">
-                    ₹
-                  </span>
                   <input
                     type="text"
                     name={field}
@@ -216,7 +213,7 @@ const FundSizesAdmin: React.FC = () => {
                 </div>
                 <p className="text-xs text-neutral-mid mt-1">
                   {fundSizes[field]
-                    ? `Current size: ₹${fundSizes[field]}`
+                    ? `Current size: ${fundSizes[field]}`
                     : "No value set"}
                 </p>
               </div>
