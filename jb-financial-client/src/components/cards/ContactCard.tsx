@@ -15,9 +15,9 @@ const contactCardData: ContactCardProps[] = [
     imageUrl: "/icons/mail.svg",
   },
   {
-    line1: "+94 70 211 1999",
-    line2: "(Working Hours: Mon - Fri from 9AM -5PM)",
-    line3: "",
+    line1: "+94 70 211 1999 (Hotline)",
+    line2: "+94 11 249 0900 (General)",
+    line3: "(Working Hours: Mon - Fri from 9AM -5PM)",
     imageUrl: "/icons/phone.svg",
   },
   {

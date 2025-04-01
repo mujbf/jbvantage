@@ -36,11 +36,14 @@ const Contact: React.FC<ContactProps> = ({}) => {
             </div>
             <div className="flex gap-4">
               <img src="/icons/phone-primary.svg" alt="Phone icon" />
-              <p className="bodyText text-neutral-mid">
+              <p className="bodyText text-neutral-mid flex flex-col">
                 <a href="tel:+94702111999" className="hover:text-neutral-dark">
-                  +94 70 211 1999
+                  +94 70 211 1999 (Hotline)
                 </a>{" "}
-                <br />
+                <a href="tel:+94112490900" className="hover:text-neutral-dark">
+                  +94 11 249 0900 (General)
+                </a>{" "}
+                {/* <br /> */}
                 <span>(Working Hours: Mon - Fri from 9AM - 5PM)</span>
                 {/* <a href="tel:+94112490950" className="hover:text-neutral-dark">
                   +94 11 249 0950
