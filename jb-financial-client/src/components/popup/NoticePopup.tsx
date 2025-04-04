@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const NoticePopup = () => {
+const NoticePopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
