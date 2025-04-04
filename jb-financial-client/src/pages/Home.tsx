@@ -5,6 +5,7 @@ import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
 import BlogCarouselSection from "../components/sections/BlogCarouselSection";
+import NoticePopup from "../components/popup/NoticePopup"; // Import the new NoticePopup component
 
 const TESTIMONIALS_JSON_PATH = "/site-data/testimonials.json";
 
@@ -20,7 +21,7 @@ const fundsData = [
   {
     category: "Mid Career Professional",
     description:
-      "Your career is progressing well and with some years under your belt, you’re starting to think about your family and its future. You want the best of both worlds, so we recommend a balanced allocation into our money market and equity funds.",
+      "Your career is progressing well and with some years under your belt, you're starting to think about your family and its future. You want the best of both worlds, so we recommend a balanced allocation into our money market and equity funds.",
     equityPercentage: 50,
     moneyMarketPercentage: 50,
     imageUrl: "/images/strategies/mid-career.jpg",
@@ -28,7 +29,7 @@ const fundsData = [
   {
     category: "Senior Professional",
     description:
-      "You’ve made it to the top and retirement is on your mind. You don’t want to take too many risks, but still have some capacity to do so. We recommend investing more into our money market funds and perhaps a little into equity.",
+      "You've made it to the top and retirement is on your mind. You don't want to take too many risks, but still have some capacity to do so. We recommend investing more into our money market funds and perhaps a little into equity.",
     equityPercentage: 20,
     moneyMarketPercentage: 80,
     imageUrl: "/images/strategies/senior.jpg",
@@ -63,6 +64,9 @@ const Home: React.FC = () => {
 
   return (
     <>
+      {/* Add the NoticePopup component here */}
+      <NoticePopup />
+
       <HeroSection
         title="Reach your financial goals with ease."
         highlightedText="financial goals"
