@@ -119,7 +119,7 @@ const ContactFormN: React.FC<ContactFormNProps> = ({
           {/* Request a Callback Tab */}
           <button
             onClick={() => handleTabClick("callback")}
-            className="flex flex-col items-center justify-center p-6 aspect-square bg-white border border-neutral-lighter hover:border-primary-500 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+            className="flex flex-col items-center justify-center p-6 aspect-square bg-[#fbfbfd] border border-neutral-lighter hover:border-primary-500 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
             <div className="text-primary-500 mb-4 md:mb-12">
               <img
@@ -136,7 +136,7 @@ const ContactFormN: React.FC<ContactFormNProps> = ({
           {/* Schedule Online Meeting Tab */}
           <button
             onClick={() => handleTabClick("meeting")}
-            className="flex flex-col items-center justify-center p-6 aspect-square bg-white border border-neutral-lighter hover:border-primary-500 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+            className="flex flex-col items-center justify-center p-6 aspect-square bg-[#fbfbfd] border border-neutral-lighter hover:border-primary-500 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
             <div className="text-primary-500 mb-4 md:mb-12">
               <img
