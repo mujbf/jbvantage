@@ -7,7 +7,7 @@ interface ContactFormNProps {
 }
 
 const ContactFormN: React.FC<ContactFormNProps> = ({
-  meetingUrl = "https://calendly.com/", // Default meeting URL if none provided
+  meetingUrl = "https://outlook.office365.com/book/JBFinancial1@jb.lk/", // Default meeting URL if none provided
 }) => {
   const [formData, setFormData] = useState({
     name: "",
