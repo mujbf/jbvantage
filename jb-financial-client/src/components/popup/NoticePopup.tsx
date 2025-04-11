@@ -57,11 +57,10 @@ const NoticePopup: React.FC = () => {
         </div>
         <div className="text-sm">
           <p className="switzer-r text-neutral-mid text-center">
-            Due to the change in AIT(Advance Income Tax) rates from 5% to 10%
-            w.e.f. 01.04.2025, we are experiencing delays in publishing the
-            latest fund prices. We sincerely apologize for the inconvenience
-            caused, and are working hard to rectify the situation at the
-            earliest.
+            We wish you a happy and prosperous Sinhala & Tamil New Year! <br />
+            Our team will be taking a break to celebrate this festive season and
+            will return to work on Wednesday, 16th April 2025. Thank you for
+            your understanding, and we look forward to serving you soon!
           </p>
         </div>
         <div className="mt-4 flex justify-center">
