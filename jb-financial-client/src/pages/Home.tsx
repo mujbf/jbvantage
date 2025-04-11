@@ -5,7 +5,7 @@ import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
 import BlogCarouselSection from "../components/sections/BlogCarouselSection";
-// import NoticePopup from "../components/popup/NoticePopup"; // Import the new NoticePopup component
+import NoticePopup from "../components/popup/NoticePopup"; // Import the new NoticePopup component
 
 const TESTIMONIALS_JSON_PATH = "/site-data/testimonials.json";
 
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
   return (
     <>
       {/* Add the NoticePopup component here */}
-      {/* <NoticePopup /> */}
+      <NoticePopup />
 
       <HeroSection
         title="Reach your financial goals with ease."
