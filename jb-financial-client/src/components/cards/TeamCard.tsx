@@ -61,13 +61,13 @@ const teamCardData: TeamCardProps[] = [
     description:
       "Shanuka joined JBF in 2014 as its Senior Fund Accountant and now heads both the unit trust and private wealth management operations. She is responsible for fund valuations, financial accounts of the funds and overall operational reporting and trade verification. Formerly at KPMG, Sri Lanka, she spent 3.5 years with the firm.",
   },
-  {
-    name: "Avishka de Silva",
-    designation: "Assistant Portfolio Manager",
-    imageUrl: "/images/team/avishka.png",
-    description:
-      "Avishka joined in 2024. Prior to JBF, he worked at Acuity Knowledge Partners as an investment research analyst serving a US-based hedge fund client. He graduated with a BCom (Major in Econometrics and Minor in Actuarial Studies) from Monash University, Australia. Avishka has completed the CFA program and is a pending charter holder.",
-  },
+  // {
+  //   name: "Avishka de Silva",
+  //   designation: "Assistant Portfolio Manager",
+  //   imageUrl: "/images/team/avishka.png",
+  //   description:
+  //     "Avishka joined in 2024. Prior to JBF, he worked at Acuity Knowledge Partners as an investment research analyst serving a US-based hedge fund client. He graduated with a BCom (Major in Econometrics and Minor in Actuarial Studies) from Monash University, Australia. Avishka has completed the CFA program and is a pending charter holder.",
+  // },
   {
     name: "Malmi Dewage",
     designation: "Portfolio Assistant",
