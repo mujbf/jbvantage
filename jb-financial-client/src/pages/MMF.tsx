@@ -80,6 +80,15 @@ const MMF: React.FC = () => {
       imagePath: "/images/documents/af.jpg",
     },
     {
+      title: "Redemption Form",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Redeem units of the fund."],
+      buttonText: "View Document",
+      filePath: "/docs/redemption_form.pdf",
+      imagePath: "/images/documents/mmf-rf.jpg",
+    },
+    {
       title: "KYC Form",
       fileType: "PDF",
       fileSize: "3.9MB",
