@@ -86,7 +86,7 @@ const SGF: React.FC = () => {
       tags: ["Redeem units of the fund."],
       buttonText: "View Document",
       filePath: "/docs/redemption_form.pdf",
-      imagePath: "/images/documents/sgf-rf.jpg",
+      imagePath: "/images/documents/rf.jpg",
     },
     {
       title: "KYC Form",
