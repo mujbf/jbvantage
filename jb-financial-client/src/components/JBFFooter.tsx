@@ -88,6 +88,7 @@ const JBFFooter: React.FC = () => {
             className="mr-3 h-6 sm:h-9"
             alt="JB Financial"
           />
+
           <p className="regularText text-neutral-mid">
             {data.companyInfo.description}
           </p>
