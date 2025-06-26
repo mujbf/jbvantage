@@ -252,7 +252,7 @@ const FundChart2: React.FC<FundChart2Props> = ({}) => {
             {ytdValue !== null ? `${ytdValue}` : "Loading..."}
           </h2>
           <p className="text-base md:text-2xl text-neutral-dark switzer-md text-center">
-            YTD Return :{" "}
+            7D Yield :{" "}
             <span className="text-neutral-light">
               as at {ytdDate !== null ? `${ytdDate}` : "Loading..."}
             </span>
