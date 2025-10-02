@@ -6,6 +6,7 @@ import { SERVER_URL } from "../Constants";
 import HeroSection from "../components/sections/HeroSection";
 import PlainTextSection from "../components/sections/PlainTextSection";
 import AccordionSection from "../components/sections/AccordionSection";
+import UnitTrustGridSection from "../components/sections/UnitTrustGridSection";
 
 const Careers: React.FC = () => {
   const [jobsData, setJobsData] = useState([]);
@@ -57,6 +58,14 @@ const Careers: React.FC = () => {
           accordionProps={{ jobs: jobsData }}
         />
       )}
+      <UnitTrustGridSection
+        subtitleText="Explore our *Unit Trusts*"
+        bodyText=""
+        buttonText="View All Funds"
+        buttonLink="/funds"
+        buttonType="secondary"
+        alignText="center"
+      />
     </>
   );
 };

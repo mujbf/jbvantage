@@ -50,7 +50,7 @@ const MMF: React.FC = () => {
       tags: ["A detailed overview of fund specifics."],
       buttonText: "View Document",
       filePath: "/docs/mmf/explanatory_memorandum.pdf",
-      imagePath: "/images/documents/mmf-em.jpg",
+      imagePath: "/images/documents/mmf-em-2025.jpg",
     },
     {
       title: "Trust Deed",
