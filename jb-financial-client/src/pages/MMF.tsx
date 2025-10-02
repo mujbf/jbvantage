@@ -44,7 +44,7 @@ const MMF: React.FC = () => {
   ];
   const documents = [
     {
-      title: "Explanatory Memorandum",
+      title: "KIID - Key Investor Information Document",
       fileType: "PDF",
       fileSize: "3.9MB",
       tags: ["A detailed overview of fund specifics."],
