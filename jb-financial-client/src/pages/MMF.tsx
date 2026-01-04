@@ -49,7 +49,7 @@ const MMF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["A detailed overview of fund specifics."],
       buttonText: "View Document",
-      filePath: "/docs/mmf/explanatory_memorandum.pdf",
+      filePath: "/docs/mmf/explanatory_memorandum_25.pdf",
       imagePath: "/images/documents/mmf-em-2025.jpg",
     },
     {
