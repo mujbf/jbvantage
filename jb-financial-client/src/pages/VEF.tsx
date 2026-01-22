@@ -94,8 +94,8 @@ const VEF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["KYC Form for JB Vantage Unit Holders."],
       buttonText: "View Document",
-      filePath: "/docs/kyc_compliance.pdf",
-      imagePath: "/images/documents/kyc-26.jpg",
+      filePath: "/docs/kyc_compliance_f.pdf",
+      imagePath: "/images/documents/kyc.jpg",
     },
     {
       title: "Nominee Form",
