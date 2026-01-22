@@ -96,7 +96,7 @@ const MMF: React.FC = () => {
       tags: ["KYC Form for JB Vantage Unit Holders"],
       buttonText: "View Document",
       filePath: "/docs/kyc_compliance.pdf",
-      imagePath: "/images/documents/kyc.jpg",
+      imagePath: "/images/documents/kyc-26.jpg",
     },
     {
       title: "Nominee Form",
