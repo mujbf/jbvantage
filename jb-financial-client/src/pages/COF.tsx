@@ -180,7 +180,7 @@ const COF: React.FC = () => {
         investment="Investment grade, short and long term instruments"
         fundType="moneyMarket"
         totalRatio="N/A"
-        customFundSize="LKR 100 Million (Jan '26)"
+        customFundSize="N/A"
       />
       {/* <FundChart4
         // groups={groups}
