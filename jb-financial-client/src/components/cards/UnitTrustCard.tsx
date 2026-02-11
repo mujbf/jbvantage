@@ -43,22 +43,34 @@ const UnitTrustCard: React.FC<CardProps> = ({
   link,
 }) => {
   return (
-    <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300">
-      <div className="flex flex-col px-4 py-6">
-        <span className="regularText">{title}</span>
-        <span className="switzer-sb text-lg md:text-2xl primaryText">
-          {subtitle}
-        </span>
+    <div className="flex flex-col md:flex-row bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 overflow-hidden">
+      {/* Image - Full width on mobile, left side on desktop */}
+      <div className="md:w-2/5 flex-shrink-0">
+        <img
+          src={imageUrl}
+          className="w-full h-full object-cover"
+          alt="card-image"
+        />
       </div>
-      <img src={imageUrl} className="" alt="card-image" />
-      <div className="flex flex-col gap-6 px-4 pt-9 pb-6">
-        <p className="regularText neutralText">{description}</p>
-        <a
-          href={link}
-          className="switzer-md text-base md:text-lg text-neutral-light hover:text-neutral-mid"
-        >
-          Learn More &nbsp;→
-        </a>
+
+      {/* Content - Right side on desktop, below image on mobile */}
+      <div className="flex flex-col flex-1">
+        <div className="flex flex-col px-4 py-6">
+          <span className="regularText">{title}</span>
+          <span className="switzer-sb text-lg md:text-2xl primaryText">
+            {subtitle}
+          </span>
+        </div>
+
+        <div className="flex flex-col gap-6 px-4 pt-0 pb-6 md:pt-2 flex-1 justify-between">
+          <p className="regularText neutralText">{description}</p>
+          <a
+            href={link}
+            className="switzer-md text-base md:text-lg text-neutral-light hover:text-neutral-mid"
+          >
+            Learn More &nbsp;→
+          </a>
+        </div>
       </div>
     </div>
   );

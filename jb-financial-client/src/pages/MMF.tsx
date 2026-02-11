@@ -93,7 +93,7 @@ const MMF: React.FC = () => {
       title: "Switch Form",
       fileType: "PDF",
       fileSize: "3.9MB",
-      tags: ["Switch units of the fund."],
+      tags: ["Switch investments from one fund to another."],
       buttonText: "View Document",
       filePath: "/docs/new/switch_form.pdf",
       imagePath: "/docs/new/switch-form.PNG",

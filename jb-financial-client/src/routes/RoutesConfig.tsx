@@ -14,6 +14,7 @@ import Careers from "../pages/Careers";
 import VEF from "../pages/VEF";
 import MMF from "../pages/MMF";
 import SGF from "../pages/SGF";
+import COF from "../pages/COF";
 import BlogInner from "../pages/BlogInner";
 import CareerInner from "../pages/CareerInner";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
@@ -47,6 +48,7 @@ const RoutesConfig: React.FC = () => {
       <Route path="/funds/value-equity-fund" element={<VEF />} />
       <Route path="/funds/money-market-fund" element={<MMF />} />
       <Route path="/funds/short-term-gilt-fund" element={<SGF />} />
+      <Route path="/funds/credit-opportunity-fund" element={<COF />} />
       <Route path="/blogs/:id" element={<BlogInner />} />
       <Route path="/careers/:id" element={<CareerInner />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -36,7 +36,7 @@ const FundTableAdmin: React.FC = () => {
   const handleInputChange = (
     index: number,
     field: keyof FundData,
-    value: string
+    value: string,
   ) => {
     const updatedData = [...data];
     updatedData[index][field] = value;
@@ -152,7 +152,7 @@ const FundTableAdmin: React.FC = () => {
                             handleInputChange(
                               index,
                               key as keyof FundData,
-                              e.target.value
+                              e.target.value,
                             )
                           }
                           className="w-full bg-transparent"

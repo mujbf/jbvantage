@@ -217,7 +217,7 @@ const FundSizesAdmin: React.FC = () => {
                     : "No value set"}
                 </p>
               </div>
-            )
+            ),
           )}
           <br />
 

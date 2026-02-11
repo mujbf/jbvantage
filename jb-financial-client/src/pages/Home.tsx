@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "../components/sections/HeroSection";
 import ColumnsSection from "../components/sections/ColumnsSection";
+import GridSection from "../components/sections/GridSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
@@ -52,6 +53,16 @@ const fundsData = [
   },
 ];
 
+// Manual data for Credit Opportunity Fund
+// TODO: Update these values as needed
+const creditOpportunityFundPrices = {
+  buyPrice1: 10, // Optional - remove or set to undefined if not needed
+  buyPrice2: undefined,
+  sellPrice: 10,
+  nav: 0,
+  date: "2026-02-10", // Update this date as needed
+};
+
 const Home: React.FC = () => {
   const [testimonials, setTestimonials] = useState([]);
 
@@ -79,7 +90,9 @@ const Home: React.FC = () => {
         tabletImage="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/home-t.webp"
         renderLeftContent={true}
       />
-      <ColumnsSection
+
+      {/* Use GridSection for 2x2 Unit Trust cards */}
+      <GridSection
         subtitleText="Explore our *Unit  Trusts*"
         bodyText=""
         buttonText="View All Funds"
@@ -88,6 +101,7 @@ const Home: React.FC = () => {
         cardType="unitTrust"
         alignText="center"
       />
+
       <ColumnsSection
         subtitleText="*Why  Invest*  in a Unit Trust?"
         bodyText=""
@@ -126,7 +140,9 @@ const Home: React.FC = () => {
         accordionType="fund"
         accordionProps={{ funds: fundsData }}
       />
-      <ColumnsSection
+
+      {/* Use GridSection for 2x2 Fund Price cards with manual Credit Opportunity Fund data */}
+      <GridSection
         subtitleText="Latest Fund Prices"
         bodyText=""
         buttonText="View All Funds"
@@ -134,7 +150,9 @@ const Home: React.FC = () => {
         buttonType="primary"
         cardType="fundPrice"
         alignText="center"
+        creditOpportunityFundData={creditOpportunityFundPrices}
       />
+
       <BlogCarouselSection
         subtitleText="The Vantage Point"
         bodyText="Check out our latest insights and articles"

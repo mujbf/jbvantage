@@ -9,6 +9,7 @@ interface FundStatsSectionProps {
   investmentTooltip?: string;
   fundType: "valueEquity" | "moneyMarket" | "shortTermGilt";
   totalRatio: string;
+  customFundSize?: string;
 }
 
 const CustomTooltip: React.FC<{ text: string; children: React.ReactNode }> = ({
@@ -42,6 +43,7 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
   investmentTooltip,
   fundType,
   totalRatio,
+  customFundSize,
 }) => {
   const [fundSize, setFundSize] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
@@ -164,11 +166,12 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
             Fund Size
           </p>
           <p className="switzer-sb text-neutral-dark text-sm md:text-2xl px-4 py-2 text-right">
-            {loading ? (
-              <span className="text-neutral-light">Loading...</span>
-            ) : (
-              fundSize
-            )}
+            {customFundSize ||
+              (loading ? (
+                <span className="text-neutral-light">Loading...</span>
+              ) : (
+                fundSize
+              ))}
           </p>
         </div>
         <div className="flex justify-between border-y border-neutral-light">
