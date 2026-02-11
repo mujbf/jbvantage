@@ -59,7 +59,7 @@ const creditOpportunityFundPrices = {
   buyPrice1: 10, // Optional - remove or set to undefined if not needed
   buyPrice2: undefined,
   sellPrice: 10,
-  nav: 0,
+  nav: 0.01,
   date: "2026-02-10", // Update this date as needed
 };
 

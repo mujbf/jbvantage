@@ -36,7 +36,7 @@ const COF: React.FC = () => {
       tags: ["Trust Deed for the fund."],
       buttonText: "View Document",
       filePath: "/docs/cof/cof-trust-deed.pdf",
-      imagePath: "/docs/cof/cof-trust-deed.png",
+      imagePath: "/docs/cof/cof-trust-deed.PNG",
     },
     {
       title: "Application Form",

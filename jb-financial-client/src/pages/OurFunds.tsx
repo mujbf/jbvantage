@@ -3,6 +3,7 @@ import ColumnsSection from "../components/sections/ColumnsSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import FundTableSection from "../components/sections/funds/FundTableSection";
+import GridSection from "../components/sections/GridSection";
 
 const faqData = [
   {
@@ -123,13 +124,22 @@ function OurFunds() {
         tabletImage="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/our-funds-t.webp"
         renderLeftContent={true} // True [Content on the Left] , False [Content on the Right]
       />
-      <ColumnsSection
+      {/* <ColumnsSection
         subtitleText="Explore our *Unit  Trusts*"
         bodyText=""
         buttonText=""
         buttonType="secondary" // 'primary' | 'secondary'
         cardType="unitTrust"
         alignText="center" // Change to "left" or "center"
+      /> */}
+      <GridSection
+        subtitleText="Explore our *Unit  Trusts*"
+        bodyText=""
+        buttonText="View All Funds"
+        buttonLink="/funds"
+        buttonType="secondary"
+        cardType="unitTrust"
+        alignText="center"
       />
       <FundTableSection />
       <SideContentSection
