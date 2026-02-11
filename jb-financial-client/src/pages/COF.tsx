@@ -11,8 +11,8 @@ import React from "react";
 
 const COF: React.FC = () => {
   // Embedded data for preview - no backend calls needed
-  const creditOpportunityFundUrl = "/docs/cof/monthly_factsheet.pdf";
-  const creditOpportunityFundUrl2 = "/docs/cof/historical_unit_prices.xlsx";
+  //   const creditOpportunityFundUrl = "/docs/cof/monthly_factsheet.pdf";
+  //   const creditOpportunityFundUrl2 = "/docs/cof/historical_unit_prices.xlsx";
 
   const paragraphs = [
     "Sashika joined JB Financial as CIO in 2023, bringing 14 years of experience in the Sri Lankan investment industry. He began his career at Guardian Fund Management, where he progressed from Investment Analyst to Portfolio Manager over nine years. He then joined Capital Alliance, managing Unit Trusts, followed by a role at the Softlogic Group, where he managed insurance portfolio investments and oversaw Unit Trusts and private client assets.",
@@ -121,14 +121,14 @@ const COF: React.FC = () => {
     // },
   ];
 
-  const fundStats = {
-    objective: "Higher risk adjusted returns and liquidity",
-    strategy: "Invest in long and short term debt instruments",
-    benchmark: "NDBIB-CRISIL 365 Day T-Bill Index",
-    investment: "'Investment grade', short and long term instruments",
-    fundSize: "LKR 100 Millions",
-    totalRatio: "N/A",
-  };
+  //   const fundStats = {
+  //     objective: "Higher risk adjusted returns and liquidity",
+  //     strategy: "Invest in long and short term debt instruments",
+  //     benchmark: "NDBIB-CRISIL 365 Day T-Bill Index",
+  //     investment: "'Investment grade', short and long term instruments",
+  //     fundSize: "LKR 100 Millions",
+  //     totalRatio: "N/A",
+  //   };
 
   const faqData = [
     {
