@@ -1,5 +1,5 @@
 import HeroSection from "../components/sections/HeroSection";
-import ColumnsSection from "../components/sections/ColumnsSection";
+// import ColumnsSection from "../components/sections/ColumnsSection";
 import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import FundTableSection from "../components/sections/funds/FundTableSection";
