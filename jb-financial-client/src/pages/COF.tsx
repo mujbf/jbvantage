@@ -20,15 +20,15 @@ const COF: React.FC = () => {
   ];
 
   const documents = [
-    // {
-    //   title: "Explanatory Memorandum",
-    //   fileType: "PDF",
-    //   fileSize: "3.9MB",
-    //   tags: ["A detailed overview of fund specifics."],
-    //   buttonText: "View Document",
-    //   filePath: "/docs/cof/explanatory_memorandum.pdf",
-    //   imagePath: "/images/documents/cof-em.jpg",
-    // },
+    {
+      title: "Explanatory Memorandum",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["A detailed overview of fund specifics."],
+      buttonText: "View Document",
+      filePath: "/docs/cof/cof-kiid.pdf",
+      imagePath: "/images/documents/sgf-em.jpg",
+    },
     {
       title: "Trust Deed",
       fileType: "PDF",
