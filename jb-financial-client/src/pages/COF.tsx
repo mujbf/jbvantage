@@ -27,7 +27,7 @@ const COF: React.FC = () => {
       tags: ["A detailed overview of fund specifics."],
       buttonText: "View Document",
       filePath: "/docs/cof/cof-kiid.pdf",
-      imagePath: "/images/documents/sgf-em.jpg",
+      imagePath: "/docs/cof/cof-kiid.PNG",
     },
     {
       title: "Trust Deed",
