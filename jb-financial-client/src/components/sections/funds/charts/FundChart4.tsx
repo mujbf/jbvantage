@@ -199,7 +199,6 @@ const FundChart4: React.FC<FundChart4Props> = ({}) => {
 
   return (
     <section className="bg-white px-4 py-8 md:px-8 md:py-200u lg:px-20 2xl:px-40 2xl:py-20 flex flex-col gap-16">
-      <h1>COF Chart</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 lg:gap-8 w-full">
         <div className="flex flex-col bg-[#fbfbfd] rounded-2xl border-2 border-solid border-gray-300 gap-4">
           <div className="flex flex-col px-4 pt-6">
