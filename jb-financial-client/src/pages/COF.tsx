@@ -140,11 +140,11 @@ const COF: React.FC = () => {
   ];
 
   const fundStats = {
-    objective: "TODO: Add COF objective",
-    strategy: "TODO: Add COF strategy",
-    benchmark: "TODO: Add COF benchmark",
-    investment: "TODO: Add COF investment style",
-    totalRatio: "TODO: Add COF total expense ratio",
+    objective: "Higher risk adjusted returns and liquidity",
+    strategy: "Invest in long and short term debt instruments",
+    benchmark: "NDBIB-CRISIL 365 Day T-Bill Index",
+    investment: "'Investment grade', short and long term instruments",
+    totalRatio: "N/A",
   };
 
   const faqData = [
