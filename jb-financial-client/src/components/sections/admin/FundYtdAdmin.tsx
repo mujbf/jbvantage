@@ -44,6 +44,17 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
     sgfReturnValue1: "",
     sgfReturnValue2: "",
     sgfReturnValue3: "",
+    cofYtdValue: "",
+    cofYtdDate: "",
+    cof12mValue: "",
+    cof12mDate: "",
+    cofBenchValue: "",
+    cofReturnYear1: "",
+    cofReturnYear2: "",
+    cofReturnYear3: "",
+    cofReturnValue1: "",
+    cofReturnValue2: "",
+    cofReturnValue3: "",
   });
 
   // Fetch data from the API
@@ -51,7 +62,7 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${SERVER_URL}/api/fundYTDScheme-performance`
+          `${SERVER_URL}/api/fundYTDScheme-performance`,
         );
         setFundData(response.data);
       } catch (error) {
@@ -88,7 +99,8 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
           Update the Fund Return Values
         </p>
       </div>
-      <div className="flex gap-4 md:gap-8">
+      <div className="grid grid-cols-2 gap-4 md:gap-8">
+        {/* ── Value Equity Fund ── */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Value Equity Fund</p>
           <div className="flex items-center gap-4">
@@ -129,7 +141,6 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
           </div>
-
           <div className="flex items-center gap-4">
             <p className="regularText text-neutral-mid">Benchmark</p>
             <input
@@ -141,7 +152,6 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
               className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
             />
           </div>
-
           <div className="flex flex-col gap-4">
             <p className="regularText text-neutral-mid">Return Years</p>
             <div className="flex gap-4">
@@ -200,6 +210,8 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
             </div>
           </div>
         </div>
+
+        {/* ── Money Market Fund ── */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Money Market Fund</p>
           <div className="flex items-center gap-4">
@@ -309,6 +321,8 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
             </div>
           </div>
         </div>
+
+        {/* ── Short Term Gilt Fund ── */}
         <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
           <p className="bodyText text-neutral-mid">Short Term Gilt Fund</p>
           <div className="flex items-center gap-4">
@@ -418,7 +432,119 @@ const FundYtdAdmin: React.FC<FundYtdAdminProps> = () => {
             </div>
           </div>
         </div>
+
+        {/* ── Credit Opportunity Fund ── */}
+        <div className="bg-[#fbfbfd] p-4 border border-neutral-lighter rounded shadow-sm flex flex-col flex-grow gap-4">
+          <p className="bodyText text-neutral-mid">Credit Opportunity Fund</p>
+          <div className="flex items-center gap-4">
+            <p className="regularText text-neutral-mid">YTD</p>
+            <input
+              name="cofYtdValue"
+              value={fundData.cofYtdValue}
+              onChange={handleChange}
+              placeholder=""
+              type="text"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+            />
+            <input
+              name="cofYtdDate"
+              value={fundData.cofYtdDate}
+              onChange={handleChange}
+              placeholder=""
+              type="text"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+            />
+          </div>
+          <div className="flex items-center gap-4">
+            <p className="regularText text-neutral-mid">12M</p>
+            <input
+              name="cof12mValue"
+              value={fundData.cof12mValue}
+              onChange={handleChange}
+              placeholder=""
+              type="text"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+            />
+            <input
+              name="cof12mDate"
+              value={fundData.cof12mDate}
+              onChange={handleChange}
+              placeholder=""
+              type="text"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+            />
+          </div>
+          <div className="flex items-center gap-4">
+            <p className="regularText text-neutral-mid">Benchmark</p>
+            <input
+              name="cofBenchValue"
+              value={fundData.cofBenchValue}
+              onChange={handleChange}
+              placeholder=""
+              type="text"
+              className="switzer-r border border-neutral-lighter rounded-lg text-sm w-fit"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="regularText text-neutral-mid">Return Years</p>
+            <div className="flex gap-4">
+              <input
+                name="cofReturnYear1"
+                value={fundData.cofReturnYear1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
+              />
+              <input
+                name="cofReturnValue1"
+                value={fundData.cofReturnValue1}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="cofReturnYear2"
+                value={fundData.cofReturnYear2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
+              />
+              <input
+                name="cofReturnValue2"
+                value={fundData.cofReturnValue2}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
+              />
+            </div>
+            <div className="flex gap-4">
+              <input
+                name="cofReturnYear3"
+                value={fundData.cofReturnYear3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-full"
+              />
+              <input
+                name="cofReturnValue3"
+                value={fundData.cofReturnValue3}
+                onChange={handleChange}
+                placeholder=""
+                type="text"
+                className="switzer-r border border-neutral-lighter rounded-lg text-sm w-20"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+
       <button className="primary-button" onClick={handleSubmit}>
         Submit
       </button>

@@ -9,7 +9,7 @@ interface PerformanceData {
 }
 
 interface PerformanceTableProps {
-  chartType: "value-eq" | "short-term" | "money-market";
+  chartType: "value-eq" | "short-term" | "money-market" | "credit-op";
   cardTitle: string;
 }
 
@@ -31,12 +31,12 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `${SERVER_URL}/api/performance-${chartType}`
+        `${SERVER_URL}/api/performance-${chartType}`,
       );
       const sortedData = response.data.sort(
         (a: PerformanceData, b: PerformanceData) => {
           return new Date(b.Date).getTime() - new Date(a.Date).getTime();
-        }
+        },
       );
       setData(sortedData.slice(0, 5));
       if (sortedData.length > 0) {
@@ -47,7 +47,7 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
             }
             return acc;
           },
-          { _id: "", Date: "" } as PerformanceData
+          { _id: "", Date: "" } as PerformanceData,
         );
 
         setNewEntry(initialEntry);
@@ -98,12 +98,12 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       if (isUpdating) {
         await axios.put(
           `${SERVER_URL}/api/performance-${chartType}/${newEntry._id}`,
-          entryToSend
+          entryToSend,
         );
       } else {
         await axios.post(
           `${SERVER_URL}/api/performance-${chartType}`,
-          entryToSend
+          entryToSend,
         );
       }
 
@@ -112,12 +112,15 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       const newEmptyEntry: PerformanceData = {
         _id: "",
         Date: "",
-        ...Object.keys(data[0] || {}).reduce((acc, key) => {
-          if (key !== "_id" && key !== "Date" && key !== "__v") {
-            acc[key] = "";
-          }
-          return acc;
-        }, {} as Omit<PerformanceData, "_id" | "Date">),
+        ...Object.keys(data[0] || {}).reduce(
+          (acc, key) => {
+            if (key !== "_id" && key !== "Date" && key !== "__v") {
+              acc[key] = "";
+            }
+            return acc;
+          },
+          {} as Omit<PerformanceData, "_id" | "Date">,
+        ),
       };
 
       setNewEntry(newEmptyEntry);
@@ -139,11 +142,12 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       "value-eq": "value-equity-fund",
       "money-market": "money-market-fund",
       "short-term": "short-term-gilt-fund",
+      "credit-op": "credit-opportunity-fund",
     };
 
     try {
       await axios.delete(
-        `${SERVER_URL}/funds/${endpointMap[chartType]}/${newEntry._id}`
+        `${SERVER_URL}/funds/${endpointMap[chartType]}/${newEntry._id}`,
       );
 
       await fetchData();
@@ -151,12 +155,15 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
       const newEmptyEntry: PerformanceData = {
         _id: "",
         Date: "",
-        ...Object.keys(data[0] || {}).reduce((acc, key) => {
-          if (key !== "_id" && key !== "Date" && key !== "__v") {
-            acc[key] = "";
-          }
-          return acc;
-        }, {} as Omit<PerformanceData, "_id" | "Date">),
+        ...Object.keys(data[0] || {}).reduce(
+          (acc, key) => {
+            if (key !== "_id" && key !== "Date" && key !== "__v") {
+              acc[key] = "";
+            }
+            return acc;
+          },
+          {} as Omit<PerformanceData, "_id" | "Date">,
+        ),
       };
 
       setNewEntry(newEmptyEntry);
@@ -179,7 +186,7 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
               {data.length > 0 &&
                 Object.keys(data[0])
                   .filter(
-                    (key) => key !== "_id" && key !== "Date" && key !== "__v"
+                    (key) => key !== "_id" && key !== "Date" && key !== "__v",
                   )
                   .map((key) => (
                     <th
@@ -204,7 +211,7 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
                 </td>
                 {Object.entries(entry)
                   .filter(
-                    ([key]) => key !== "_id" && key !== "Date" && key !== "__v"
+                    ([key]) => key !== "_id" && key !== "Date" && key !== "__v",
                   )
                   .map(([key, value]) => (
                     <td key={key} className="border border-gray-300 px-4 py-2">
@@ -219,6 +226,13 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
     </div>
   );
 
+  const defaultFieldsMap: Record<string, string[]> = {
+    "value-eq": ["JBVEF", "SPSL20TRI", "ASTRI"],
+    "short-term": ["JBGILT", "NDBIB", "TBILL"],
+    "money-market": ["JBMMF", "NDBIB", "AWFDR"],
+    "credit-op": ["JBCOF", "NDBIB", "TBILL"],
+  };
+
   const renderForm = () => (
     <form onSubmit={handleSubmit} className="px-4 md:px-8 flex flex-col gap-4">
       <input
@@ -230,20 +244,23 @@ const PerformanceTable: React.FC<PerformanceTableProps> = ({
         required
       />
       {data.length > 0 &&
-        Object.keys(data[0])
-          .filter((key) => key !== "_id" && key !== "Date" && key !== "__v")
-          .map((key) => (
-            <input
-              className="switzer-r border border-neutral-lighter rounded-md shadow-sm text-neutral-mid"
-              key={key}
-              type="number"
-              name={key}
-              placeholder={key}
-              value={newEntry[key] as string}
-              onChange={handleInputChange}
-              required
-            />
-          ))}
+        (data.length > 0
+          ? Object.keys(data[0]).filter(
+              (key) => key !== "_id" && key !== "Date" && key !== "__v",
+            )
+          : (defaultFieldsMap[chartType] ?? [])
+        ).map((key) => (
+          <input
+            className="switzer-r border border-neutral-lighter rounded-md shadow-sm text-neutral-mid"
+            key={key}
+            type="number"
+            name={key}
+            placeholder={key}
+            value={newEntry[key] as string}
+            onChange={handleInputChange}
+            required
+          />
+        ))}
       <button type="submit" className="primary-button">
         {isUpdating ? "Update Entry" : "Add Entry"}
       </button>

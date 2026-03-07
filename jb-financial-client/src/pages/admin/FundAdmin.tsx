@@ -41,7 +41,7 @@ const FundCard: React.FC<{
 
   // Sort data by date in descending order (newest first)
   const sortedData = [...fundData].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   // Calculate pagination
@@ -295,6 +295,7 @@ interface FundData {
   AWFDR?: number;
   JBGILT?: number;
   T_BILL?: number;
+  JBCOF?: number;
 }
 
 // const headers = [
@@ -342,15 +343,22 @@ interface FundData {
 
 // Main FundAdmin Component
 const FundAdmin: React.FC = () => {
-  type ChartType = "value-eq" | "short-term" | "money-market";
+  type ChartType = "value-eq" | "short-term" | "money-market" | "credit-op";
 
   const [valueEquityFundData, setValueEquityFundData] = useState([]);
   const [moneyMarketFundData, setMoneyMarketFundData] = useState([]);
   const [shortTermGiltFundData, setShortTermGiltFundData] = useState([]);
+  const [creditOpportunityFundData, setCreditOpportunityFundData] = useState(
+    [],
+  );
   const [valueEquityFundPerformanceData, setValueEquityFundPerformanceData] =
     useState<FundData[]>([]);
   const [moneyMarketFundPerformanceData, setMoneyMarketFundPerformanceData] =
     useState<FundData[]>([]);
+  const [
+    creditOpportunityFundPerformanceData,
+    setCreditOpportunityFundPerformanceData,
+  ] = useState<FundData[]>([]);
   const [
     shortTermGiltFundPerformanceData,
     setShortTermGiltFundPerformanceData,
@@ -359,6 +367,7 @@ const FundAdmin: React.FC = () => {
     "Value Equity Fund": "value-eq",
     "Money Market Fund": "money-market",
     "Short Term Gilt Fund": "short-term",
+    "Credit Opportunity Fund": "credit-op",
   };
 
   useEffect(() => {
@@ -366,19 +375,24 @@ const FundAdmin: React.FC = () => {
     const fetchData = async () => {
       try {
         const valueEquityResponse = await axios.get(
-          `${SERVER_URL}/funds/Value Equity Fund`
+          `${SERVER_URL}/funds/Value Equity Fund`,
         );
         setValueEquityFundData(valueEquityResponse.data);
 
         const moneyMarketResponse = await axios.get(
-          `${SERVER_URL}/funds/Money Market Fund`
+          `${SERVER_URL}/funds/Money Market Fund`,
         );
         setMoneyMarketFundData(moneyMarketResponse.data);
 
         const shortTermGiltResponse = await axios.get(
-          `${SERVER_URL}/funds/Short Term Gilt Fund`
+          `${SERVER_URL}/funds/Short Term Gilt Fund`,
         );
         setShortTermGiltFundData(shortTermGiltResponse.data);
+
+        const creditOpportunityResponse = await axios.get(
+          `${SERVER_URL}/funds/Credit Opportunity Fund`,
+        );
+        setCreditOpportunityFundData(creditOpportunityResponse.data);
       } catch (error) {
         console.error("Error fetching data", error);
       }
@@ -398,19 +412,24 @@ const FundAdmin: React.FC = () => {
       // Re-fetch data to update the UI
       const fetchData = async () => {
         const valueEquityResponse = await axios.get(
-          `${SERVER_URL}/funds/Value Equity Fund`
+          `${SERVER_URL}/funds/Value Equity Fund`,
         );
         setValueEquityFundData(valueEquityResponse.data);
 
         const moneyMarketResponse = await axios.get(
-          `${SERVER_URL}/funds/Money Market Fund`
+          `${SERVER_URL}/funds/Money Market Fund`,
         );
         setMoneyMarketFundData(moneyMarketResponse.data);
 
         const shortTermGiltResponse = await axios.get(
-          `${SERVER_URL}/funds/Short Term Gilt Fund`
+          `${SERVER_URL}/funds/Short Term Gilt Fund`,
         );
         setShortTermGiltFundData(shortTermGiltResponse.data);
+
+        const creditOpportunityResponse = await axios.get(
+          `${SERVER_URL}/funds/Credit Opportunity Fund`,
+        );
+        setCreditOpportunityFundData(creditOpportunityResponse.data);
       };
 
       switch (fundType) {
@@ -432,6 +451,12 @@ const FundAdmin: React.FC = () => {
             data,
           ]);
           break;
+        case "Credit Opportunity Fund":
+          setCreditOpportunityFundPerformanceData([
+            ...creditOpportunityFundPerformanceData,
+            data,
+          ]);
+          break;
         default:
           break;
       }
@@ -448,7 +473,7 @@ const FundAdmin: React.FC = () => {
         <h2 className="subtitleText text-neutral-mid">Fund Prices</h2>
         <p className="bodyText text-neutral-mid">Update fund prices daily.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
         <FundCard
           title="Fund Data Table"
           subtitle="Value Equity Fund"
@@ -468,6 +493,12 @@ const FundAdmin: React.FC = () => {
           fundData={shortTermGiltFundData}
           onSubmit={(data) => handleSubmit(data, "Short Term Gilt Fund")}
         />
+        <FundCard
+          title="Fund Data Table"
+          subtitle="Credit Opportunity Fund"
+          fundData={creditOpportunityFundData}
+          onSubmit={(data) => handleSubmit(data, "Credit Opportunity Fund")}
+        />
       </div>
       <div className="flex flex-col gap-4">
         <h2 className="subtitleText text-neutral-mid">Fund Charts</h2>
@@ -475,7 +506,7 @@ const FundAdmin: React.FC = () => {
           Update values for fund charts monthly.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
         <PerformanceTable
           chartType={chartTypes["Value Equity Fund"]}
           cardTitle="Value Equity Fund"
@@ -487,6 +518,10 @@ const FundAdmin: React.FC = () => {
         <PerformanceTable
           chartType={chartTypes["Short Term Gilt Fund"]}
           cardTitle="Short Term Gilt Fund"
+        />
+        <PerformanceTable
+          chartType={chartTypes["Credit Opportunity Fund"]}
+          cardTitle="Credit Opportunity Fund"
         />
       </div>
       <FundTableAdmin />

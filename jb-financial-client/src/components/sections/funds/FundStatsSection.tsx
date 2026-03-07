@@ -7,7 +7,11 @@ interface FundStatsSectionProps {
   benchmark: string;
   investment: string;
   investmentTooltip?: string;
-  fundType: "valueEquity" | "moneyMarket" | "shortTermGilt";
+  fundType:
+    | "valueEquity"
+    | "moneyMarket"
+    | "shortTermGilt"
+    | "creditOpportunity";
   totalRatio: string;
   customFundSize?: string;
 }
@@ -89,6 +93,8 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
         return `${SERVER_URL}/api/fund-sizes/mmf`;
       case "shortTermGilt":
         return `${SERVER_URL}/api/fund-sizes/sgf`;
+      case "creditOpportunity":
+        return `${SERVER_URL}/api/fund-sizes/cof`;
       default:
         return `${SERVER_URL}/api/fund-sizes`; // Fallback to the main endpoint
     }
@@ -103,6 +109,8 @@ const FundStatsSection: React.FC<FundStatsSectionProps> = ({
         return "mmfFundSize";
       case "shortTermGilt":
         return "sgfFundSize";
+      case "creditOpportunity":
+        return "cofFundSize";
       default:
         return "";
     }

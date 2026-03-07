@@ -12,14 +12,6 @@ interface GridSectionProps {
   buttonLink?: string;
   cardType: "unitTrust" | "fundPrice";
   alignText?: "left" | "center";
-  // Manual Credit Opportunity Fund data (optional - only for fundPrice type)
-  creditOpportunityFundData?: {
-    buyPrice1: number;
-    buyPrice2?: number;
-    sellPrice: number;
-    nav: number;
-    date: string;
-  };
 }
 
 const GridSection: React.FC<GridSectionProps> = ({
@@ -30,7 +22,6 @@ const GridSection: React.FC<GridSectionProps> = ({
   buttonLink,
   cardType,
   alignText = "center",
-  creditOpportunityFundData,
 }) => {
   const [cards, setCards] = useState<any[]>([]);
 
@@ -38,40 +29,27 @@ const GridSection: React.FC<GridSectionProps> = ({
     const fetchData = async () => {
       if (cardType === "fundPrice") {
         try {
-          // Fetch the first 3 funds from API
           const [
             valueEquityResponse,
             moneyMarketResponse,
             shortTermGiltResponse,
+            creditOpportunityResponse,
           ] = await Promise.all([
             axios.get(`${SERVER_URL}/funds/Value Equity Fund`),
             axios.get(`${SERVER_URL}/funds/Money Market Fund`),
             axios.get(`${SERVER_URL}/funds/Short Term Gilt Fund`),
+            axios.get(`${SERVER_URL}/funds/Credit Opportunity Fund`),
           ]);
 
           const fundData = [
             mapFundData(valueEquityResponse.data, "Value Equity Fund"),
             mapFundData(moneyMarketResponse.data, "Money Market Fund"),
             mapFundData(shortTermGiltResponse.data, "Short Term Gilt Fund"),
+            mapFundData(
+              creditOpportunityResponse.data,
+              "Credit Opportunity Fund",
+            ),
           ];
-
-          // Add manual Credit Opportunity Fund data if provided
-          if (creditOpportunityFundData) {
-            fundData.push({
-              buyPrices: [
-                creditOpportunityFundData.buyPrice1,
-                creditOpportunityFundData.buyPrice2,
-              ].filter(Boolean),
-              link: "/funds/credit-opportunity-fund",
-              sellPrice: creditOpportunityFundData.sellPrice,
-              nav: creditOpportunityFundData.nav,
-              showSecondBuyPrice: !!creditOpportunityFundData.buyPrice2,
-              subtitle: "Credit Opportunity Fund",
-              title: "JB Vantage",
-              _id: "manual-cof", // Add _id to match the expected type
-              date: creditOpportunityFundData.date,
-            });
-          }
 
           setCards(fundData);
         } catch (error) {
@@ -79,7 +57,6 @@ const GridSection: React.FC<GridSectionProps> = ({
           setCards([]);
         }
       } else if (cardType === "unitTrust") {
-        // Add the new Credit Opportunity Fund to the existing unit trust data
         const updatedUnitTrustData = [
           ...unitTrustCardData,
           {
@@ -96,7 +73,7 @@ const GridSection: React.FC<GridSectionProps> = ({
     };
 
     fetchData();
-  }, [cardType, creditOpportunityFundData]);
+  }, [cardType]);
 
   const mapFundData = (data: any[], fundType: string) => {
     const sortedData = data.sort(
@@ -109,6 +86,7 @@ const GridSection: React.FC<GridSectionProps> = ({
       "Value Equity Fund": "/funds/value-equity-fund",
       "Money Market Fund": "/funds/money-market-fund",
       "Short Term Gilt Fund": "/funds/short-term-gilt-fund",
+      "Credit Opportunity Fund": "/funds/credit-opportunity-fund",
     };
 
     return {

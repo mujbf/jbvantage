@@ -5,6 +5,7 @@ interface FundSizesFormData {
   vefFundSize: string;
   mmfFundSize: string;
   sgfFundSize: string;
+  cofFundSize: string;
 }
 
 const FundSizesAdmin: React.FC = () => {
@@ -12,6 +13,7 @@ const FundSizesAdmin: React.FC = () => {
     vefFundSize: "",
     mmfFundSize: "",
     sgfFundSize: "",
+    cofFundSize: "",
   });
 
   const [loading, setLoading] = useState<boolean>(true);
@@ -26,6 +28,7 @@ const FundSizesAdmin: React.FC = () => {
     vefFundSize: "Value Equity Fund Size",
     mmfFundSize: "Money Market Fund Size",
     sgfFundSize: "Short Term Gilt Fund Size",
+    cofFundSize: "Credit Opportunity Fund Size",
   };
 
   // Fetch fund sizes from the API
@@ -46,6 +49,7 @@ const FundSizesAdmin: React.FC = () => {
           vefFundSize: data.vefFundSize || "",
           mmfFundSize: data.mmfFundSize || "",
           sgfFundSize: data.sgfFundSize || "",
+          cofFundSize: data.cofFundSize || "",
         });
       } catch (error) {
         console.error("Error fetching fund sizes:", error);
@@ -110,6 +114,9 @@ const FundSizesAdmin: React.FC = () => {
       sgfFundSize: fundSizes.sgfFundSize
         ? fundSizes.sgfFundSize.replace(/,/g, "")
         : "",
+      cofFundSize: fundSizes.cofFundSize
+        ? fundSizes.cofFundSize.replace(/,/g, "")
+        : "",
     };
 
     try {
@@ -135,6 +142,7 @@ const FundSizesAdmin: React.FC = () => {
           vefFundSize: formatFundSize(data.data.vefFundSize),
           mmfFundSize: formatFundSize(data.data.mmfFundSize),
           sgfFundSize: formatFundSize(data.data.sgfFundSize),
+          cofFundSize: formatFundSize(data.data.cofFundSize),
         });
       }
     } catch (error) {
@@ -172,7 +180,7 @@ const FundSizesAdmin: React.FC = () => {
       <div className="flex flex-col gap-4">
         <h2 className="subtitleText text-neutral-mid">Fund Size</h2>
         <p className="bodyText text-neutral-mid">
-          Update the recent fund size of all 3 funds.
+          Update the recent fund size of all 4 funds.
         </p>
       </div>
 

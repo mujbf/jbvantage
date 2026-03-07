@@ -53,16 +53,6 @@ const fundsData = [
   },
 ];
 
-// Manual data for Credit Opportunity Fund
-// TODO: Update these values as needed
-const creditOpportunityFundPrices = {
-  buyPrice1: 10, // Optional - remove or set to undefined if not needed
-  buyPrice2: undefined,
-  sellPrice: 10,
-  nav: 0.01,
-  date: "2026-02-10", // Update this date as needed
-};
-
 const Home: React.FC = () => {
   const [testimonials, setTestimonials] = useState([]);
 
@@ -150,7 +140,6 @@ const Home: React.FC = () => {
         buttonType="primary"
         cardType="fundPrice"
         alignText="center"
-        creditOpportunityFundData={creditOpportunityFundPrices}
       />
 
       <BlogCarouselSection

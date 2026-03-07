@@ -1,36 +1,18 @@
-import ColumnsSection from "../components/sections/ColumnsSection.tsx";
-import AccordionSection from "../components/sections/AccordionSection.tsx";
+import ColumnsSection from "../components/sections/ColumnsSection";
+import AccordionSection from "../components/sections/AccordionSection";
 
-import FundHeader from "../components/sections/funds/FundHeader.tsx";
-import FundDetailsSection from "../components/sections/funds/FundDetailsSection.tsx";
-import FundStatsSection from "../components/sections/funds/FundStatsSection.tsx";
-import FundChart4 from "../components/sections/funds/charts/FundChart4.tsx";
-import FundStewardSection from "../components/sections/funds/FundStewardSection.tsx";
-import FundDocumentsSection from "../components/sections/funds/FundDocumentsSection.tsx";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { SERVER_URL } from "../Constants.tsx";
+import FundHeader from "../components/sections/funds/FundHeader";
+import FundDetailsSection from "../components/sections/funds/FundDetailsSection";
+import FundStatsSection from "../components/sections/funds/FundStatsSection";
+// import FundChart4 from "../components/sections/funds/charts/FundChart4";
+import FundStewardSection from "../components/sections/funds/FundStewardSection";
+import FundDocumentsSection from "../components/sections/funds/FundDocumentsSection";
+import React from "react";
 
-const COF: React.FC = () => {
-  const [creditOpportunityFundUrl, setCreditOpportunityFundUrl] = useState("");
-  const [creditOpportunityFundUrl2, setCreditOpportunityFundUrl2] =
-    useState("");
-
-  useEffect(() => {
-    const fetchDocumentUrl = async () => {
-      try {
-        const response = await axios.get(`${SERVER_URL}/api/fund-doc-urls`);
-        const { creditOpportunityFundUrl, creditOpportunityFundUrl2 } =
-          response.data;
-        setCreditOpportunityFundUrl(creditOpportunityFundUrl);
-        setCreditOpportunityFundUrl2(creditOpportunityFundUrl2);
-      } catch (error) {
-        console.error("Error fetching document URL:", error);
-      }
-    };
-
-    fetchDocumentUrl();
-  }, []);
+const COFOld: React.FC = () => {
+  // Embedded data for preview - no backend calls needed
+  //   const creditOpportunityFundUrl = "/docs/cof/monthly_factsheet.pdf";
+  //   const creditOpportunityFundUrl2 = "/docs/cof/historical_unit_prices.xlsx";
 
   const paragraphs = [
     "Sashika joined JB Financial as CIO in 2023, bringing 14 years of experience in the Sri Lankan investment industry. He began his career at Guardian Fund Management, where he progressed from Investment Analyst to Portfolio Manager over nine years. He then joined Capital Alliance, managing Unit Trusts, followed by a role at the Softlogic Group, where he managed insurance portfolio investments and oversaw Unit Trusts and private client assets.",
@@ -119,33 +101,34 @@ const COF: React.FC = () => {
       filePath: "/docs/sgf/application_checklist.pdf",
       imagePath: "/images/documents/ac.jpg",
     },
-    {
-      title: "Monthly Factsheet",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["Latest monthly factsheet for the fund."],
-      buttonText: "View Document",
-      filePath: creditOpportunityFundUrl,
-      imagePath: "/images/documents/cof-mf.jpg",
-    },
-    {
-      title: "Historical Unit Prices",
-      fileType: "XLSX",
-      fileSize: "3.9MB",
-      tags: ["Historical unit price sheet of the fund."],
-      buttonText: "Download File",
-      filePath: creditOpportunityFundUrl2,
-      imagePath: "/images/documents/cof-hup.jpg",
-    },
+    // {
+    //   title: "Monthly Factsheet",
+    //   fileType: "PDF",
+    //   fileSize: "3.9MB",
+    //   tags: ["Latest monthly factsheet for the fund."],
+    //   buttonText: "View Document",
+    //   filePath: creditOpportunityFundUrl,
+    //   imagePath: "/images/documents/cof-mf.jpg",
+    // },
+    // {
+    //   title: "Historical Unit Prices",
+    //   fileType: "XLSX",
+    //   fileSize: "3.9MB",
+    //   tags: ["Historical unit price sheet of the fund."],
+    //   buttonText: "Download File",
+    //   filePath: creditOpportunityFundUrl2,
+    //   imagePath: "/images/documents/cof-hup.jpg",
+    // },
   ];
 
-  const fundStats = {
-    objective: "TODO: Add COF objective",
-    strategy: "TODO: Add COF strategy",
-    benchmark: "TODO: Add COF benchmark",
-    investment: "TODO: Add COF investment style",
-    totalRatio: "TODO: Add COF total expense ratio",
-  };
+  //   const fundStats = {
+  //     objective: "Higher risk adjusted returns and liquidity",
+  //     strategy: "Invest in long and short term debt instruments",
+  //     benchmark: "NDBIB-CRISIL 365 Day T-Bill Index",
+  //     investment: "'Investment grade', short and long term instruments",
+  //     fundSize: "LKR 100 Millions",
+  //     totalRatio: "N/A",
+  //   };
 
   const faqData = [
     {
@@ -189,35 +172,29 @@ const COF: React.FC = () => {
         ]}
         imageUrl="/images/funds/credit-opportunity.jpeg"
       />
+      {/* change type */}
       <FundStatsSection
-        fundType="creditOpportunity"
-        objective={fundStats.objective}
-        strategy={fundStats.strategy}
-        benchmark={fundStats.benchmark}
-        investment={fundStats.investment}
-        totalRatio={fundStats.totalRatio}
+        objective="Higher risk adjusted returns and liquidity"
+        strategy="Invest in long and short term debt instruments"
+        benchmark="NDBIB-CRISIL 365 Day T-Bill Index"
+        investment="Investment grade, short and long term instruments"
+        fundType="moneyMarket"
+        totalRatio="N/A"
+        customFundSize="N/A"
       />
-      <FundChart4
+      {/* <FundChart4
+        // groups={groups}
         mainTitle="The numbers speak for themselves"
         mainDescription="For more than a decade, we have remained at the forefront of investment management in Sri Lanka. Our continuous growth is testament to our ability to generate healthy returns for our clients."
         primaryButtonText=""
         secondaryButtonText=""
-      />
+      /> */}
+
       <FundDocumentsSection
         sectionTitle="Fund Documents"
         description="Explore our current up to date insights on the fund."
         documents={documents}
       />
-      {/* <ColumnsSection
-        subtitleText="Notes from our Portfolio Manager"
-        bodyText="Performance reviews, insights on the economic climate, and more."
-        buttonText="View all notes"
-        buttonLink="/blog"
-        blogCategory="Credit Opportunity Fund" // TODO: Confirm blog category name
-        buttonType="primary"
-        cardType="blog"
-        alignText="left"
-      /> */}
       <FundStewardSection
         name="Sashika Wickremaratne"
         designation="Chief Investment Officer"
@@ -243,4 +220,4 @@ const COF: React.FC = () => {
   );
 };
 
-export default COF;
+export default COFOld;
