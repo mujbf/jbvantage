@@ -44,7 +44,13 @@ const Careers: React.FC = () => {
         tabletImage="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/careers-t.webp"
         renderLeftContent={false}
       />
-      <PlainTextSection />
+      <PlainTextSection
+        subtitle="Be part of an award winning and fast growing investment management team"
+        body="Since 2011, we've been at the forefront of the investment management industry in Sri Lanka. Among us are economists, experienced portfolio managers, and seasoned equity advisors who are among the most respected in Sri Lanka."
+        bodyWidth="80%"
+        textAlign="center"
+        bgColor="bg-white"
+      />
       {loading ? (
         <p>Loading job listings...</p>
       ) : error ? (

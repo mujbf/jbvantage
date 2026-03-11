@@ -5,7 +5,7 @@ interface Testimonial {
   testimonialText: string;
   testimonialImageSrc: string;
   name: string;
-  designation: string;
+  designation?: string;
 }
 
 interface TestimonialSectionProps {
@@ -20,7 +20,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
       );
     }, 20000); // Change slide every 20 seconds
 
@@ -33,13 +33,13 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
     );
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
@@ -59,7 +59,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
             >
               {/* <img src={testimonial.logoSrc} alt="Logo" className="w-[140px]" /> */}
               <p className="bodyText neutralText w-full lg:w-1/2">
-                {`“${testimonial.testimonialText}”`}
+                {`"${testimonial.testimonialText}"`}
               </p>
               <div className="flex flex-col gap-4 items-center">
                 {/* <img
@@ -71,9 +71,11 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                   <h5 className="switzer-sb text-lg lg:text-2xl primaryText">
                     {testimonial.name}
                   </h5>
-                  {/* <p className="bodyText text-neutral-light">
-                    {testimonial.designation}
-                  </p> */}
+                  {testimonial.designation && (
+                    <p className="bodyText text-neutral-light">
+                      {testimonial.designation}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -114,9 +116,9 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
             <path
               d="M10 6l6 6-6 6"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
