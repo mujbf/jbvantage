@@ -27,7 +27,7 @@ const HerWealth: React.FC = () => {
         button2Text=""
         desktopImage="/images/hero/herwealth-d.jpg"
         mobileImage="/images/hero/herwealth-m.jpg"
-        tabletImage="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/home-t.webp"
+        tabletImage="/images/hero/herwealth-t.jpg"
         renderLeftContent={false}
       />
       <PlainTextSection

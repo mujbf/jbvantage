@@ -33,7 +33,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    link: string
+    link: string,
   ) => {
     event.preventDefault(); // Prevent default anchor behavior
 
@@ -63,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   </span>
                 ) : (
                   <span key={index}>{word} </span>
-                )
+                ),
               )}
             </h1>
             <p className="bodyText neutralText lg:w-[40%]">{description}</p>
@@ -98,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   </span>
                 ) : (
                   <span key={index}>{word} </span>
-                )
+                ),
               )}
             </h1>
             <p className="bodyText neutralText">{description}</p>
@@ -145,7 +145,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         className="md:hidden absolute inset-0 bg-cover bg-center z-[-1]"
         style={{ backgroundImage: `url(${mobileImage})` }}
       />
-      <div className="absolute bottom-[24px] right-[24px]">
+      {/* <div className="absolute bottom-[24px] right-[24px]">
         <a href="https://ebadge.bestweb.lk/api/v1/clicked/jbvantage.lk/BestWeb/2025/Rate_Us">
           <img
             src="https://ebadge.bestweb.lk/eBadgeSystem/domainNames/jbvantage.lk/BestWeb/2025/Rate_Us/image.png"
@@ -154,7 +154,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             height="150"
           />
         </a>
-      </div>
+      </div> */}
     </section>
   );
 };
