@@ -71,7 +71,7 @@ const COF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["Purchase units of the fund."],
       buttonText: "View Document",
-      filePath: "/docs/new/purchase_form.pdf",
+      filePath: "/docs/editable/pf.pdf",
       imagePath: "/docs/new/purchase-form.PNG",
     },
     {
@@ -80,7 +80,7 @@ const COF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["Redeem units of the fund."],
       buttonText: "View Document",
-      filePath: "/docs/new/redemption_form.pdf",
+      filePath: "/docs/editable/rf.pdf",
       imagePath: "/docs/new/redemption-form.PNG",
     },
     {
@@ -89,7 +89,7 @@ const COF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["Switch investments from one fund to another."],
       buttonText: "View Document",
-      filePath: "/docs/new/switch_form.pdf",
+      filePath: "/docs/editable/sf.pdf",
       imagePath: "/docs/new/switch-form.PNG",
     },
     {
@@ -107,7 +107,7 @@ const COF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["JBF Nominee Form"],
       buttonText: "View Document",
-      filePath: "/docs/nominee_form.pdf",
+      filePath: "/docs/editable/nf.pdf",
       imagePath: "/images/documents/nominee.jpg",
     },
     {
@@ -126,7 +126,7 @@ const COF: React.FC = () => {
       tags: ["Latest monthly factsheet for the fund."],
       buttonText: "View Document",
       filePath: creditOpportunityFundUrl,
-      imagePath: "/images/documents/cof-mf.jpg",
+      imagePath: "/images/documents/cof-mf.PNG",
     },
     {
       title: "Historical Unit Prices",
