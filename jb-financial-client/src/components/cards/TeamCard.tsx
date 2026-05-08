@@ -70,7 +70,7 @@ const teamCardData: TeamCardProps[] = [
   },
   {
     name: "Malmi Dewage",
-    designation: "Portfolio Assistant",
+    designation: "Associate - Investments",
     imageUrl: "/images/team/malmi.png",
     description:
       "Malmi joined JBF in Feb. 2024 as a Portfolio Assistant and primarily focuses on daily UT cash flows management, monthly and quarterly portfolio performance report preparation and supporting the portfolio managers. She graduated with a second-class upper division in BSc. Hons. in Financial Management from Sabaragamuwa University of Sri Lanka.",
