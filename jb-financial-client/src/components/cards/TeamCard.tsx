@@ -47,13 +47,13 @@ const teamCardData: TeamCardProps[] = [
   //   description:
   //     "Nirodh joined JBF in 2023 as an assistant portfolio manager. He focuses mainly on the Gilt and Money Market unit trusts. Prior to JBF he worked at the investment department of Union Assurance. He holds an MBA in Finance from University of Colombo and a B.B Mgt Finance (Special) degree from the University of Kelaniya.",
   // },
-  {
-    name: "Dilan Jayakody",
-    designation: "Senior Manager – Business Development",
-    imageUrl: "/images/team/dilan.png",
-    description:
-      "Dilan joined JB Financial in 2024 to lead the transformation of its business development and sales operations. With over 15 years’ experience in wealth management, fund distribution, and client relationship strategy, he has held senior roles at Softlogic Asset Management, NDB Wealth, and HSBC, where he specialized in building investor segments and leading cross-functional sales teams.",
-  },
+  // {
+  //   name: "Dilan Jayakody",
+  //   designation: "Senior Manager – Business Development",
+  //   imageUrl: "/images/team/dilan.png",
+  //   description:
+  //     "Dilan joined JB Financial in 2024 to lead the transformation of its business development and sales operations. With over 15 years’ experience in wealth management, fund distribution, and client relationship strategy, he has held senior roles at Softlogic Asset Management, NDB Wealth, and HSBC, where he specialized in building investor segments and leading cross-functional sales teams.",
+  // },
   {
     name: "Jehan Fernando",
     designation: "Head of Sales",
