@@ -35,7 +35,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
   const [file, setFile] = useState<File | null>(null); // State for managing file upload
   const [uploadStatus, setUploadStatus] = useState<string>("");
   const [sectionFiles, setSectionFiles] = useState<(File | null)[]>(
-    new Array(initialBlog.content.length).fill(null)
+    new Array(initialBlog.content.length).fill(null),
   );
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { id, value } = e.target;
     setBlog({ ...blog, [id]: value });
@@ -55,7 +55,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
     index: number,
     field: "heading" | "paragraphs" | "imageUrl",
     value: string | string[],
-    paragraphIndex?: number
+    paragraphIndex?: number,
   ) => {
     const updatedContent = [...blog.content];
     if (field === "paragraphs" && paragraphIndex !== undefined) {
@@ -73,7 +73,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
 
   const handleSectionFileChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    index: number
+    index: number,
   ) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
@@ -101,7 +101,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
       });
 
       setUploadStatus(
-        `Upload successful for section ${index + 1}! Image URL saved.`
+        `Upload successful for section ${index + 1}! Image URL saved.`,
       );
       console.log("Server response:", response.data);
 
@@ -110,7 +110,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
       setBlog({ ...blog, content: updatedContent });
     } catch (error) {
       setUploadStatus(
-        `Upload failed for section ${index + 1}. Please try again.`
+        `Upload failed for section ${index + 1}. Please try again.`,
       );
       console.error("Upload error:", error);
     }
@@ -236,6 +236,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
             <option>Value Equity Fund</option>
             <option>Money Market Fund</option>
             <option>Short Term Gilt Fund</option>
+            <option>Credit Opportunity Fund</option>
           </Select>
         </div>
         <div className="flex-grow">
@@ -401,7 +402,7 @@ const BlogAdminForm: React.FC<BlogAdminFormProps> = ({
                       sectionIndex,
                       "paragraphs",
                       e.target.value,
-                      paragraphIndex
+                      paragraphIndex,
                     )
                   }
                   required

@@ -208,7 +208,7 @@ const COF: React.FC = () => {
         description="Explore our current up to date insights on the fund."
         documents={documents}
       />
-      {/* <ColumnsSection
+      <ColumnsSection
         subtitleText="Notes from our Portfolio Manager"
         bodyText="Performance reviews, insights on the economic climate, and more."
         buttonText="View all notes"
@@ -217,7 +217,7 @@ const COF: React.FC = () => {
         buttonType="primary"
         cardType="blog"
         alignText="left"
-      /> */}
+      />
       <FundStewardSection
         name="Sashika Wickremaratne"
         designation="Chief Investment Officer"
