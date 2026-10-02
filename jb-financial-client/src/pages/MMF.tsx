@@ -7,6 +7,7 @@ import FundStatsSection from "../components/sections/funds/FundStatsSection";
 import FundChart2 from "../components/sections/funds/charts/FundChart2";
 import FundStewardSection from "../components/sections/funds/FundStewardSection";
 import FundDocumentsSection from "../components/sections/funds/FundDocumentsSection";
+import FundApplicationSection from "../components/sections/funds/FundApplicationSection";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { SERVER_URL } from "../Constants.tsx";
@@ -233,6 +234,10 @@ const MMF: React.FC = () => {
         sectionTitle="Fund Documents"
         description="Explore our current up to date insights on the fund."
         documents={documents}
+      />
+      <FundApplicationSection
+        fundCode="MMF"
+        fundName="JB Vantage Money Market Fund"
       />
       <ColumnsSection
         subtitleText="Notes from our Portfolio Manager"

@@ -7,6 +7,7 @@ import FundStatsSection from "../components/sections/funds/FundStatsSection.tsx"
 import FundChart4 from "../components/sections/funds/charts/FundChart4.tsx";
 import FundStewardSection from "../components/sections/funds/FundStewardSection.tsx";
 import FundDocumentsSection from "../components/sections/funds/FundDocumentsSection.tsx";
+import FundApplicationSection from "../components/sections/funds/FundApplicationSection.tsx";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { SERVER_URL } from "../Constants.tsx";
@@ -207,6 +208,10 @@ const COF: React.FC = () => {
         sectionTitle="Fund Documents"
         description="Explore our current up to date insights on the fund."
         documents={documents}
+      />
+      <FundApplicationSection
+        fundCode="COF"
+        fundName="JB Vantage Credit Opportunity Fund"
       />
       <ColumnsSection
         subtitleText="Notes from our Portfolio Manager"
