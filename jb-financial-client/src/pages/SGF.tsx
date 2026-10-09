@@ -68,7 +68,7 @@ const SGF: React.FC = () => {
       fileSize: "3.9MB",
       tags: ["So we can get to know you."],
       buttonText: "View Document",
-      filePath: "/docs/sgf/application_form.pdf",
+      filePath: "/docs/application_form.pdf",
       imagePath: "/images/documents/pf.jpg",
     },
     {
