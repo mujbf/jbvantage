@@ -45,6 +45,15 @@ const VEF: React.FC = () => {
   ];
   const documents = [
     {
+      title: "Monthly Factsheet",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Latest monthly factsheet for the fund."],
+      buttonText: "View Document",
+      filePath: valueEquityFundUrl,
+      imagePath: "/images/documents/vef-mf.jpg",
+    },
+    {
       title: "Explanatory Memorandum",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -70,6 +79,15 @@ const VEF: React.FC = () => {
       buttonText: "View Document",
       filePath: "/docs/application_form.pdf",
       imagePath: "/images/documents/pf.jpg",
+    },
+    {
+      title: "KYC Form",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["KYC Form for JB Vantage Unit Holders."],
+      buttonText: "View Document",
+      filePath: "/docs/kyc_compliance_f.pdf",
+      imagePath: "/images/documents/kyc.jpg",
     },
     {
       title: "Purchase Form",
@@ -99,15 +117,6 @@ const VEF: React.FC = () => {
       imagePath: "/docs/new/switch-form.PNG",
     },
     {
-      title: "KYC Form",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["KYC Form for JB Vantage Unit Holders."],
-      buttonText: "View Document",
-      filePath: "/docs/kyc_compliance_f.pdf",
-      imagePath: "/images/documents/kyc.jpg",
-    },
-    {
       title: "Nominee Form",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -124,15 +133,6 @@ const VEF: React.FC = () => {
       buttonText: "View Document",
       filePath: "/docs/vef/application_checklist.pdf",
       imagePath: "/images/documents/ac.jpg",
-    },
-    {
-      title: "Monthly Factsheet",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["Latest monthly factsheet for the fund."],
-      buttonText: "View Document",
-      filePath: valueEquityFundUrl,
-      imagePath: "/images/documents/vef-mf.jpg",
     },
     {
       title: "Historical Unit Prices",

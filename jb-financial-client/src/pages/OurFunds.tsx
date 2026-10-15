@@ -4,6 +4,7 @@ import SideContentSection from "../components/sections/SideContentSection";
 import AccordionSection from "../components/sections/AccordionSection";
 import FundTableSection from "../components/sections/funds/FundTableSection";
 import GridSection from "../components/sections/GridSection";
+import FundApplicationSection from "../components/sections/funds/FundApplicationSection";
 
 const faqData = [
   {
@@ -149,6 +150,7 @@ function OurFunds() {
         buttonText=""
         imageUrl="https://jbfinance-images.s3.eu-north-1.amazonaws.com/static/proactive-strategy.webp"
       />
+      <FundApplicationSection sectionTitle="Upload Applications" />
       <AccordionSection
         title="Frequently Asked Questions"
         highlightedText="Questions"

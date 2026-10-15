@@ -44,6 +44,15 @@ const MMF: React.FC = () => {
     "Set up JB Financial's wealth management operation at in 2011 and has worked in private and institutional fund management since 1996. Christine began her career with TD Bank Financial Group of Canada in mutual funds and retail treasury, moving onto private asset management. In Sri Lanka, she worked in corporate finance at CitiNational Investment Bank, Colombo and has independently advised institutions on setting investment policy.​​",
   ];
   const documents = [
+    {
+      title: "Monthly Factsheet",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Latest monthly factsheet for the fund."],
+      buttonText: "View Document",
+      filePath: moneyMarketFundUrl,
+      imagePath: "/images/documents/mmf-mf.jpg",
+    },
     // Doc
     {
       title: "KIID - Key Investor Information Document",
@@ -73,6 +82,15 @@ const MMF: React.FC = () => {
       imagePath: "/images/documents/pf.jpg",
     },
     {
+      title: "KYC Form",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["KYC Form for JB Vantage Unit Holders"],
+      buttonText: "View Document",
+      filePath: "/docs/kyc_compliance_f.pdf",
+      imagePath: "/images/documents/kyc.jpg",
+    },
+    {
       title: "Purchase Form",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -100,15 +118,6 @@ const MMF: React.FC = () => {
       imagePath: "/docs/new/switch-form.PNG",
     },
     {
-      title: "KYC Form",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["KYC Form for JB Vantage Unit Holders"],
-      buttonText: "View Document",
-      filePath: "/docs/kyc_compliance_f.pdf",
-      imagePath: "/images/documents/kyc.jpg",
-    },
-    {
       title: "Nominee Form",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -125,15 +134,6 @@ const MMF: React.FC = () => {
       buttonText: "View Document",
       filePath: "/docs/mmf/application_checklist.pdf",
       imagePath: "/images/documents/ac.jpg",
-    },
-    {
-      title: "Monthly Factsheet",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["Latest monthly factsheet for the fund."],
-      buttonText: "View Document",
-      filePath: moneyMarketFundUrl,
-      imagePath: "/images/documents/mmf-mf.jpg",
     },
     {
       title: "Historical Unit Prices",

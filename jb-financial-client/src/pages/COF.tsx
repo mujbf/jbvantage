@@ -40,6 +40,15 @@ const COF: React.FC = () => {
 
   const documents = [
     {
+      title: "Monthly Factsheet",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["Latest monthly factsheet for the fund."],
+      buttonText: "View Document",
+      filePath: creditOpportunityFundUrl,
+      imagePath: "/images/documents/cof-mf.PNG",
+    },
+    {
       title: "Explanatory Memorandum",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -65,6 +74,15 @@ const COF: React.FC = () => {
       buttonText: "View Document",
       filePath: "/docs/application_form.pdf",
       imagePath: "/images/documents/pf.jpg",
+    },
+    {
+      title: "KYC Form",
+      fileType: "PDF",
+      fileSize: "3.9MB",
+      tags: ["KYC Form for JB Vantage Unit Holders"],
+      buttonText: "View Document",
+      filePath: "/docs/kyc_compliance_f.pdf",
+      imagePath: "/images/documents/kyc.jpg",
     },
     {
       title: "Purchase Form",
@@ -94,15 +112,6 @@ const COF: React.FC = () => {
       imagePath: "/docs/new/switch-form.PNG",
     },
     {
-      title: "KYC Form",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["KYC Form for JB Vantage Unit Holders"],
-      buttonText: "View Document",
-      filePath: "/docs/kyc_compliance_f.pdf",
-      imagePath: "/images/documents/kyc.jpg",
-    },
-    {
       title: "Nominee Form",
       fileType: "PDF",
       fileSize: "3.9MB",
@@ -119,15 +128,6 @@ const COF: React.FC = () => {
       buttonText: "View Document",
       filePath: "/docs/sgf/application_checklist.pdf",
       imagePath: "/images/documents/ac.jpg",
-    },
-    {
-      title: "Monthly Factsheet",
-      fileType: "PDF",
-      fileSize: "3.9MB",
-      tags: ["Latest monthly factsheet for the fund."],
-      buttonText: "View Document",
-      filePath: creditOpportunityFundUrl,
-      imagePath: "/images/documents/cof-mf.PNG",
     },
     {
       title: "Historical Unit Prices",
