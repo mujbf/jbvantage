@@ -6,6 +6,7 @@ import JBFAdminNavbar from "./components/JBFAdminNavbar";
 import JBFFooter from "./components/JBFFooter";
 import RoutesConfig from "./routes/RoutesConfig";
 import LoadingSpinner from "./components/LoadingSpinner";
+import WhatsAppButton from "./components/WhatsAppButton";
 import { AuthProvider } from "./pages/admin/Auth";
 import "./App.css";
 
@@ -67,6 +68,7 @@ const AppContent: React.FC = () => {
       {!isLoginPage && (isAdminRoute ? <JBFAdminNavbar /> : <JBFNavbar />)}
       <RoutesConfig />
       {!isAdminRoute && <JBFFooter />}
+      {!isAdminRoute && <WhatsAppButton />}
     </>
   );
 };
