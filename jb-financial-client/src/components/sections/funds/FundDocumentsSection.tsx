@@ -40,7 +40,7 @@ const FundDocumentsSection: React.FC<FundDocumentsSectionProps> = ({
               className="w-full aspect-[1/1.414] shadow-md rounded-sm"
             />
             <div className="flex flex-col gap-2 md:gap-4 flex-1">
-              <h5 className="zodiak-r text-lg md:text-2xl text-neutral-mid">
+              <h5 className="zodiak-r text-base md:text-xl text-neutral-mid text-center">
                 {doc.title}
               </h5>
               {/* File type pill and description hidden for now
@@ -61,7 +61,7 @@ const FundDocumentsSection: React.FC<FundDocumentsSectionProps> = ({
             </div>
             <a
               href={doc.filePath} // Removed download attribute
-              className="secondary-button-2 w-full text-center"
+              className="secondary-button-2 self-center text-center"
               target="_blank" // Open in a new tab
               rel="noopener noreferrer" // Security best practice
             >
