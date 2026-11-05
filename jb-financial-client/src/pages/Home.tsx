@@ -132,6 +132,21 @@ const Home: React.FC = () => {
         accordionProps={{ funds: fundsData }}
       />
 
+      <SideContentSection
+        title="Your Path to Financial Empowerment"
+        highlightedText="Financial Empowerment"
+        description="Financial literacy brings freedom, security, and the power to choose. Women often put others first. Building wealth secures your own future too, and that change can last for generations."
+        buttonText="Learn More"
+        buttonLink="/herwealth"
+        imageUrl="/images/her-wealth/her-wealth.webp"
+        imageColumn={{
+          title: "Join Her Wealth",
+          text: "Our advisors will show you how to manage your money and grow it over time through compounding and equity unit trusts. When women thrive financially, families and communities thrive too.",
+          imageUrl: "/images/her-wealth/her-wealth-logo.webp",
+        }}
+        swapContentAndImage={true}
+      />
+
       {/* Use GridSection for 2x2 Fund Price cards with manual Credit Opportunity Fund data */}
       <GridSection
         subtitleText="Latest Fund Prices"
