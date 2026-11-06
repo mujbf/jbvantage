@@ -32,32 +32,14 @@ const BlogCarouselSection: React.FC<BlogCarouselSectionProps> = ({
   useEffect(() => {
     const fetchLatestBlogs = async () => {
       try {
-        // Fetch the latest blog IDs
-        const latestResponse = await fetch(`${SERVER_URL}/api/latest-blogs`);
-        const latestData = await latestResponse.json();
+        // Fetch all blogs, already sorted most recent first by the server
+        const response = await fetch(`${SERVER_URL}/api/blogs`);
+        const blogDetails = await response.json();
 
-        if (
-          !latestData.success ||
-          !latestData.data ||
-          !latestData.data.blogIds
-        ) {
+        if (!Array.isArray(blogDetails)) {
           setBlogs([]);
           return;
         }
-
-        const blogIds = latestData.data.blogIds; // Correctly extract the blogIds array
-
-        if (blogIds.length === 0) {
-          setBlogs([]);
-          return;
-        }
-
-        // Fetch the blog details for each ID
-        const blogDetailsPromises = blogIds.map((id: string) =>
-          fetch(`${SERVER_URL}/api/blogs/${id}`).then((res) => res.json())
-        );
-
-        const blogDetails = await Promise.all(blogDetailsPromises);
 
         // If filtering by category, apply the filter
         const filteredBlogs = blogCategory
