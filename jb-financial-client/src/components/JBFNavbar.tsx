@@ -48,7 +48,7 @@ const JBFNavbar: React.FC = () => {
   const isSectionActive = (hrefs: string[]) =>
     hrefs.some(
       (href) =>
-        location.pathname === href || location.pathname.startsWith(`${href}/`)
+        location.pathname === href || location.pathname.startsWith(`${href}/`),
     );
 
   const linkClass = (active: boolean) =>
@@ -63,7 +63,7 @@ const JBFNavbar: React.FC = () => {
     id: string,
     label: string,
     href: string,
-    items: NavItem[]
+    items: NavItem[],
   ) => (
     <div
       className="relative hidden md:block"
@@ -73,7 +73,7 @@ const JBFNavbar: React.FC = () => {
       <Navbar.Link
         href={href}
         className={`${linkClass(
-          isSectionActive([href, ...items.map((item) => item.href)])
+          isSectionActive([href, ...items.map((item) => item.href)]),
         )} lg:mx-1 cursor-pointer`}
       >
         {label}
@@ -98,7 +98,10 @@ const JBFNavbar: React.FC = () => {
   // Mobile: parent link followed by its sub items as bulleted links
   const renderMobileGroup = (label: string, href: string, items: NavItem[]) => (
     <div className="block md:hidden">
-      <Navbar.Link href={href} className={`${linkClass(isActive(href))} lg:mx-1`}>
+      <Navbar.Link
+        href={href}
+        className={`${linkClass(isActive(href))} lg:mx-1`}
+      >
         {label}
       </Navbar.Link>
       {items.map((item) => (
@@ -161,19 +164,20 @@ const JBFNavbar: React.FC = () => {
           "wealth-management",
           "Wealth Management",
           "/private-wealth-management",
-          wealthManagementItems
+          wealthManagementItems,
         )}
         {renderMobileGroup(
           "Wealth Management",
           "/private-wealth-management",
-          wealthManagementItems
+          wealthManagementItems,
         )}
 
         {renderDesktopDropdown("team", "Team", "/team", teamItems)}
         {renderMobileGroup("Team", "/team", teamItems)}
 
         <Navbar.Link
-          href="/herwealth"
+          href="https://www.jbherwealth.com/"
+          target="_blank"
           className={`${linkClass(isActive("/herwealth"))} md:-mr-4 lg:mx-1`}
         >
           HerWealth

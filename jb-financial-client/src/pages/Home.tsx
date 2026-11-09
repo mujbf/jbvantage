@@ -133,15 +133,15 @@ const Home: React.FC = () => {
       />
 
       <SideContentSection
-        title="Your Path to Financial Empowerment"
-        highlightedText="Financial Empowerment"
-        description="Financial literacy brings freedom, security, and the power to choose. Women often put others first. Building wealth secures your own future too, and that change can last for generations."
+        title="Expert Strategies for Lasting Financial Empowerment"
+        highlightedText="Lasting Financial Empowerment"
+        description="Welcome to your first step toward building wealth. Financial literacy isn’t just about numbers. It’s about freedom, security, and making choices that reflect your values. Women are often raised to put caregiving first, which can leave their own financial futures behind. Treating wealth-building as empowerment creates change that lasts for generations."
         buttonText="Learn More"
         buttonLink="/herwealth"
         imageUrl="/images/her-wealth/her-wealth.webp"
         imageColumn={{
-          title: "Join Her Wealth",
-          text: "Our advisors will show you how to manage your money and grow it over time through compounding and equity unit trusts. When women thrive financially, families and communities thrive too.",
+          title: "JB HerWealth",
+          text: "We’re here to help you move from “money as survival” to “money as empowerment.” Our professional advisors will show you how to manage your money well, and how compounding and equity-related unit trusts can build long-term wealth. Because when women thrive financially, families and communities thrive too.",
           imageUrl: "/images/her-wealth/her-wealth-logo.webp",
         }}
         swapContentAndImage={true}

@@ -36,7 +36,7 @@
         { "text": "Blog", "url": "/blog" },
         { "text": "Team", "url": "/team" },
         { "text": "Careers", "url": "/careers" },
-        { "text": "HerWealth", "url": "/herwealth" }
+        { "text": "HerWealth", "url": "https://www.jbherwealth.com/" }
       ]
     },
     {
