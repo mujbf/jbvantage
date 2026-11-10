@@ -137,10 +137,10 @@ const Home: React.FC = () => {
         highlightedText="Lasting Financial Empowerment"
         description="Welcome to your first step toward building wealth. Financial literacy isn’t just about numbers. It’s about freedom, security, and making choices that reflect your values. Women are often raised to put caregiving first, which can leave their own financial futures behind. Treating wealth-building as empowerment creates change that lasts for generations."
         buttonText="Learn More"
-        buttonLink="/herwealth"
+        buttonLink="https://www.jbherwealth.com/"
         imageUrl="/images/her-wealth/her-wealth.webp"
         imageColumn={{
-          title: "JB HerWealth",
+          title: "JB herWEALTH",
           text: "We’re here to help you move from “money as survival” to “money as empowerment.” Our professional advisors will show you how to manage your money well, and how compounding and equity-related unit trusts can build long-term wealth. Because when women thrive financially, families and communities thrive too.",
           imageUrl: "/images/her-wealth/her-wealth-logo.webp",
         }}

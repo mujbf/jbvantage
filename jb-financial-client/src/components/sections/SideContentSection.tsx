@@ -48,7 +48,7 @@ const SideContentSection: React.FC<SideContentSectionProps> = ({
   const renderImageColumn = imageColumn && (
     <div className="flex flex-col lg:flex-row gap-8 items-center">
       <div className="w-full lg:w-1/2 flex flex-col gap-2 lg:gap-6">
-        <h4 className="switzer-sb text-2xl uppercase text-primary-900">
+        <h4 className="switzer-sb text-2xl text-primary-900">
           {imageColumn.title}
         </h4>
         <p className="regularText neutralText">{imageColumn.text}</p>
